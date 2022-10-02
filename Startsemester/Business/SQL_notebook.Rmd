@@ -1,0 +1,109 @@
+---
+title: "Template R notebook met SQL code"
+output: html_document
+---
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Instructies:                                                                                            +
++ Onderstaande is nodig om je notebook werkende te krijgen.                                               +
++ Bij het opstarten van je notebook dien je de chunk van regel 28 t/m 40 en regel 42 t/m 46 te runnen.    +
++ Daarna spring je naar regel 76 waar je je eerste SQL-chunk kan maken.                                   +
++                                                                                                         +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Dit is een voorbeeld van hoe je aan de slag zou kunnen gaan met R chunks in een Notebook.
+Hierin ga je:
++ opmaak toepassen
++ functies uit Datacamp toepassen op een "eigen" dataset
++ oefenen met "knitten"
+Er is met zogenaamde Markdown allerlei opmaak toegepast op de tekst rondom de chunks. Dit is anders dan hoe het in Word gaat (daar is het meer What You See Is What You Get), het is wel vergelijkbaar met de opmaak van pagina's in Wikipedia.
+
+## Importeren libraries en dataset
+Hieronder wordt een library geladen waar functies in zitten die we verderop in het Notebook gaan gebruiken: tidyverse. Daarnaast wordt hier de dataset geïmporteerd zodat we daar vragen aan kunnen stellen. 
+
+
+## Setup
+```{r setup, include=FALSE}
+library(tidyverse)
+library(lubridate)
+library(readxl)
+
+dataset <- read_excel("VerkoopSupermarktProducten.xlsx")
+
+con <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
+copy_to(con, dataset, overwrite = TRUE)
+
+knitr::opts_chunk$set(connection = "con")
+
+```
+
+```{sql connection=con}
+UPDATE dataset SET besteldatum = DATE(besteldatum, 'unixepoch'), leverdatum = DATE(leverdatum, 'unixepoch'), betaaldatum = DATE(betaaldatum, 'unixepoch');
+```
+
+
+Als je bovenstaande code uitvoert door op het groene pijltje rechtsbovenin de chunk te drukken, gebeurt er nog vrij weinig. Als het goed is verschijnt er alleen even een groen balkje naast de code regels. Tenminste, als je het Excel bestand op de juiste plek hebt geüpload.
+Het laden van de libraries hoeven we maar 1 keer te doen en het is wel zo overzichtelijk om dat allemaal aan het begin van je document te doen voor je de inhoud in duikt.
+
+De dataset is nu opgeslagen in een database waarvoor we een connectie hebben gemaakt die 'con' heet. Elke keer als we dus gegevens uit die database willen halen zullen we dus eerst die connectie moeten gaan noemen.
+
+
+## eerste SQL-chunk
+In de onderstaande chunk is de meest basale vorm van een query opgesteld. Je kan deze laten uitvoeren door op de groene knop te drukken of door de query-code te selecteren en op *Ctrl+Shift+Enter* te drukken.
+Merk ook de eerste regel op waarin 'connection=con' staat. Deze is nodig om contact met de database te maken.
+
+```{sql connection=con}
+select *
+from dataset
+```
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Opdracht                                                                                                            +
++ Bouw een aantal SQL-queries die interessante informatie opvragen uit de data. Je kan denken aan vragen zoals        +
++  - Hoeveel verschillende verkopers zijn er?                                                                         +
++  - Hoeveel verkopers per regio zijn er?                                                                             +
++                                                                                                                     +
++ Maak zo meer SQL-queries op de gegeven dataset (of een eigen dataset) waarin gebruik gemaakt is van onder andere    +
++ WHERE, ORDER BY, GROUP BY, HAVING en subqueries;                                                                    +
++                                                                                                                     +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+```{sql connection=con}
+select regiocode, count(klantnr)
+from dataset
+group by regiocode
+```
+Advies: Meer marketing in RHMD.
+
+
+
+```{sql connection=con}
+select count(distinct verkoper) as aantalVerkopers
+from dataset
+```
+Er zijn in totaal 6 verschillende verkopers
+
+
+
+```{sql connection=con}
+select regiocode, count(distinct verkoper)
+from dataset
+group by regiocode
+```
+
+
+
+Nieuwe query's kan je aanroepen door in de balk van dit subscherm op het pijltje naast het groene C-knopje te drukken en te kiezen voor SQL. Vergeet niet de connectie 'con' heet en daar aan moet linken, net zoals de bovenstaande query's.
+
+
+
+De resultaten van het notebook kan je opslaan als een HTML-pagina. Om dat te doen klik je in de bovenstaande balk op de pijl naast *Preview* en selecteer je *Knit to HTML*. Een andere optie is om *Ctrl+Shift+K* in te drukken om een HTML bestand te krijgen.
+
+```{sql connection=con}
+select *
+from dataset
+```
+
