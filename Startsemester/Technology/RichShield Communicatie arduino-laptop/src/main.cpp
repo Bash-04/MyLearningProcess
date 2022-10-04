@@ -9,6 +9,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  int sum = number.toInt() * number.toInt();
+  
   if (Serial.available() > 0)
   {
     char received = Serial.read();
@@ -16,7 +18,7 @@ void loop() {
     if (received == '\n') 
     {
       Serial.println("Arduino Received: " + number); 
-      Serial.println(number.toInt() * number.toInt());
+      Serial.println(sum);
       number = "";
     }
     else
