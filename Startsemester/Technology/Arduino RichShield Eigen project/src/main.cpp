@@ -19,7 +19,7 @@ int value = 0;
 
 int toneCalc = 0;
 
-int sequence[10];
+int sequence[8];
 int count = 0;
 
 // 
@@ -45,7 +45,7 @@ void setup() {
   pinMode(buttonRight, INPUT_PULLUP);
 }
 
-void beep() {
+void checkButtonAndBeep() {
   int leftButtonPressed = digitalRead(buttonLeft);
   int rightButtonPressed = digitalRead(buttonRight);
 
@@ -79,12 +79,43 @@ void beep() {
 
 void beepSequence() {
   delay(1000);
-  for (int i = 0; i < 10; i++)
+  for (int i = 0; i < 8; i++)
   {
     tone(buzzer, sequence[i], 0.1);
     Serial.println(sequence[i]);
     delay(200);
     Display.show(i + 1);
+  }
+}
+
+void checkKnob() {
+  if (value == oneHundredPercent)
+  {
+    checkButtonAndBeep();
+    digitalWrite(ledRed, HIGH);
+  }
+  else if (value >= seventyFivePercent)
+  {
+    checkButtonAndBeep();
+    digitalWrite(ledRed, LOW);
+    digitalWrite(ledGreen, HIGH);
+  }
+  else if(value >= fiftyPercent)
+  {
+    checkButtonAndBeep();
+    digitalWrite(ledGreen, LOW);
+    digitalWrite(ledBlue, HIGH);
+  }
+  else if (value >= twentyFivePercent)
+  {
+    checkButtonAndBeep();
+    digitalWrite(ledBlue, LOW);
+    digitalWrite(ledYellow, HIGH);
+  }
+  else
+  {
+    checkButtonAndBeep();
+    digitalWrite(ledYellow, LOW);
   }
 }
 
@@ -94,36 +125,7 @@ void loop() {
   value = map(value, 0, 1023, 0, 255);
   toneCalc = map(value, 0, 1023, 0, 18000);
 
-  if (value == oneHundredPercent)
-  {
-    beep();
-    digitalWrite(ledRed, HIGH);
-  }
-  else if (value >= seventyFivePercent)
-  {
-    beep();
-    digitalWrite(ledRed, LOW);
-    digitalWrite(ledGreen, HIGH);
-  }
-  else if(value >= fiftyPercent)
-  {
-    beep();
-    digitalWrite(ledGreen, LOW);
-    digitalWrite(ledBlue, HIGH);
-  }
-  else if (value >= twentyFivePercent)
-  {
-    beep();
-    digitalWrite(ledBlue, LOW);
-    digitalWrite(ledYellow, HIGH);
-  }
-  else
-  {
-    beep();
-    digitalWrite(ledYellow, LOW);
-  }
-
-  if (count == 10)
+  if (count == 8)
   {
     beepSequence();
     count = 0;
@@ -131,15 +133,18 @@ void loop() {
     Display.show(count);
   }
 
+  checkKnob();
 
   if (Serial.available() > 0)
   {
     char received = Serial.read();
-    sequence[received];
     if (received == '\n')
     {
       Serial.println(sequenceNumber);
+      sequence[count] = sequenceNumber.toInt() + 150;
       sequenceNumber = "";
+      count++;
+      Display.show(count);
     }
     else
     {
