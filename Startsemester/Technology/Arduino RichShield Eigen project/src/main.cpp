@@ -88,6 +88,11 @@ void beepSequence() {
   }
 }
 
+void toggleLed(int oldLed, int newLed){
+  digitalWrite(oldLed, LOW);
+  digitalWrite(newLed, HIGH);
+}
+
 void checkKnob() {
   if (value == oneHundredPercent)
   {
@@ -97,20 +102,17 @@ void checkKnob() {
   else if (value >= seventyFivePercent)
   {
     checkButtonAndBeep();
-    digitalWrite(ledRed, LOW);
-    digitalWrite(ledGreen, HIGH);
+    toggleLed(ledRed, ledGreen);
   }
   else if(value >= fiftyPercent)
   {
     checkButtonAndBeep();
-    digitalWrite(ledGreen, LOW);
-    digitalWrite(ledBlue, HIGH);
+    toggleLed(ledGreen, ledBlue);
   }
   else if (value >= twentyFivePercent)
   {
     checkButtonAndBeep();
-    digitalWrite(ledBlue, LOW);
-    digitalWrite(ledYellow, HIGH);
+    toggleLed(ledBlue, ledYellow);
   }
   else
   {
