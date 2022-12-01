@@ -17,7 +17,7 @@ namespace WindowsFormsAppTeam
             InitializeComponent();
         }
 
-        List<Team> teams = new List<Team>();
+        List<Team> teams = new List<Team>();    // New Object
         int selectedTeam = 0;
 
         private void FormTeamManager_Load(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace WindowsFormsAppTeam
             int number = Convert.ToInt32(nudNumber.Value);
             FieldPosition fieldPosition = (FieldPosition) cbPlayerPos.SelectedItem;
             
-            Player player = new Player(playerName, number, fieldPosition);
+            Player player = new Player(playerName, number, fieldPosition);  // New Object
             // player.Name = "Henk";
 
             if (teams.Count == 0)
@@ -64,7 +64,7 @@ namespace WindowsFormsAppTeam
             }
             else
             {
-                Team team = new Team(teamName, cityName);
+                Team team = new Team(teamName, cityName);   // New Object
 
                 teams.Add(team);
 
