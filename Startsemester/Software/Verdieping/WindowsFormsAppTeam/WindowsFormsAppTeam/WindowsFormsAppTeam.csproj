@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="City.cs" />
+    <Compile Include="Coach.cs" />
     <Compile Include="FieldPosition.cs" />
     <Compile Include="FormTeamManager.cs">
       <SubType>Form</SubType>

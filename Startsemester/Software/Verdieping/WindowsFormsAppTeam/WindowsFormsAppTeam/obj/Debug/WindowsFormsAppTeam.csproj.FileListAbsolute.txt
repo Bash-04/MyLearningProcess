@@ -9,3 +9,14 @@ C:\Users\BasBa\OneDrive\Standaard\School\3. Fontys Hogeschool, Eindhoven\S1\Soft
 C:\Users\BasBa\OneDrive\Standaard\School\3. Fontys Hogeschool, Eindhoven\S1\Software\Oriëntatie\Apps\WindowsFormsAppTeam\WindowsFormsAppTeam\obj\Debug\WindowsFormsAppTeam.csproj.CoreCompileInputs.cache
 C:\Users\BasBa\OneDrive\Standaard\School\3. Fontys Hogeschool, Eindhoven\S1\Software\Oriëntatie\Apps\WindowsFormsAppTeam\WindowsFormsAppTeam\obj\Debug\WindowsFormsAppTeam.exe
 C:\Users\BasBa\OneDrive\Standaard\School\3. Fontys Hogeschool, Eindhoven\S1\Software\Oriëntatie\Apps\WindowsFormsAppTeam\WindowsFormsAppTeam\obj\Debug\WindowsFormsAppTeam.pdb
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\WindowsFormsAppTeam\WindowsFormsAppTeam\bin\Debug\WindowsFormsAppTeam.exe.config
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\WindowsFormsAppTeam\WindowsFormsAppTeam\bin\Debug\WindowsFormsAppTeam.exe
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\WindowsFormsAppTeam\WindowsFormsAppTeam\bin\Debug\WindowsFormsAppTeam.pdb
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\WindowsFormsAppTeam\WindowsFormsAppTeam\obj\Debug\WindowsFormsAppTeam.csproj.AssemblyReference.cache
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\WindowsFormsAppTeam\WindowsFormsAppTeam\obj\Debug\WindowsFormsAppTeam.csproj.SuggestedBindingRedirects.cache
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\WindowsFormsAppTeam\WindowsFormsAppTeam\obj\Debug\WindowsFormsAppTeam.FormTeamManager.resources
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\WindowsFormsAppTeam\WindowsFormsAppTeam\obj\Debug\WindowsFormsAppTeam.Properties.Resources.resources
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\WindowsFormsAppTeam\WindowsFormsAppTeam\obj\Debug\WindowsFormsAppTeam.csproj.GenerateResource.cache
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\WindowsFormsAppTeam\WindowsFormsAppTeam\obj\Debug\WindowsFormsAppTeam.csproj.CoreCompileInputs.cache
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\WindowsFormsAppTeam\WindowsFormsAppTeam\obj\Debug\WindowsFormsAppTeam.exe
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\WindowsFormsAppTeam\WindowsFormsAppTeam\obj\Debug\WindowsFormsAppTeam.pdb

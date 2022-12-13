@@ -9,7 +9,7 @@ namespace WindowsFormsAppTeam
     public class Player
     {
         // properties
-        public string name { get; private set; }
+        public string Name { get; private set; }
         public int Number { get; private set; }
         public FieldPosition FieldPosition { get; private set; }
         public double salary { get; private set; }
@@ -17,12 +17,17 @@ namespace WindowsFormsAppTeam
         // functions
         public Player(string name, int number, FieldPosition fieldPosition) // Constructor
         {
-            this.name = name;
+            this.Name = name;
             this.Number = number;
             this.FieldPosition = fieldPosition;
         }
 
-        private double Salary()
+        public Player(string name) 
+        {
+            Name = name;
+        }
+
+        private double SignContract()
         {
             switch (FieldPosition)
             {
@@ -52,7 +57,7 @@ namespace WindowsFormsAppTeam
 
         public override string ToString()
         {
-            return FieldPosition + " - " + name + " (" + Number.ToString() + ")" + " - €" + Salary();
+            return FieldPosition + " - " + Name + " (" + Number.ToString() + ")" + " - €" + SignContract();
         }
     }
 }

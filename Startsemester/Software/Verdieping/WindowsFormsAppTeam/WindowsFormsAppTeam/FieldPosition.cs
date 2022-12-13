@@ -11,7 +11,6 @@ namespace WindowsFormsAppTeam
         GoalKeeper, 
         Defender,
         Midfielder,
-        Attacker,
-        Coach
+        Attacker
     }
 }
