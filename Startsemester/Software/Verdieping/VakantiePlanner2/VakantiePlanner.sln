@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VakantiePlannerGUI", "WindowsFormsAppVakantiePlanner\VakantiePlannerGUI.csproj", "{CB121291-765E-4AE7-A9F7-CB7687883FD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VakantiePlannerModules", "VakantiePlannerModules\VakantiePlannerModules.csproj", "{FBBB3A15-C773-438E-8FEE-3A30813E0C4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB121291-765E-4AE7-A9F7-CB7687883FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB121291-765E-4AE7-A9F7-CB7687883FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB121291-765E-4AE7-A9F7-CB7687883FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB121291-765E-4AE7-A9F7-CB7687883FD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBBB3A15-C773-438E-8FEE-3A30813E0C4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBBB3A15-C773-438E-8FEE-3A30813E0C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBBB3A15-C773-438E-8FEE-3A30813E0C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBBB3A15-C773-438E-8FEE-3A30813E0C4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {093F3FFE-CE60-4361-BADD-8E26C7F54B34}
+	EndGlobalSection
+EndGlobal

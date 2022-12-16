@@ -47,7 +47,7 @@ namespace WindowsFormsAppTeam
             {
                 Team team = teams[selectedTeam];
 
-                team.AddPlayers(player);
+                team.TryAddPlayers(player);
 
                 ShowTeam();
             }

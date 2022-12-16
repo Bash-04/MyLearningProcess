@@ -9,7 +9,7 @@ namespace WindowsFormsAppTeam
     public class Team
     {
         // a team consists of:
-        // 0 / 1 coach and 11 players
+        // 0 / 1 coach and 11 fieldplayers
         // 1 goalkeeper
         // max 5 defenders
         // max 5 midfielders
@@ -46,9 +46,20 @@ namespace WindowsFormsAppTeam
             this.city = city;
         }
 
-        public void AddPlayers(Player player)
+        public void TryAddPlayers(Player player)    // van void naar bool en alle checks toevoegen of een player wel toegevoegd mag worden
         {
-            this.players.Add(player);
+            //bool succes = false;
+            //if (PlayerCanBeAdded(player) == true)
+            //    succes = true;
+            //{
+                this.players.Add(player);
+            //}
+            //return succes;
+        }
+
+        private bool PlayerCanBeAdded(Player player)
+        {
+            throw new NotImplementedException();
         }
 
         public override string ToString()

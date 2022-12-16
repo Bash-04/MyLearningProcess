@@ -1,0 +1,27 @@
+vakantieplanner
+
+afdelingen:
+notarissen/waarnemers: 6(5/1)
+onroerend goed : behandelaren: 9 - ondersteuners: 3	(alle locaties - 2 uden/2-2 deurne/5-1 gemert)
+ondernemingsrecht: behandelaren: 2 - ondersteuners: 3
+familierecht: behandelaren: 7 - ondersteuners: 0		(uden)
+boedelafdeling: behandelaren: 5 - ondersteuners: 0
+receptie: 6 (min. 3 aanwezig)
+boekhouding: 3
+HR-manager: 2
+
+kantoren/locaties (moet variabel zijn als er kantoren bij komen): 
+Uden
+Gemert
+Deurne
+	numberOfEmployees
+
+Medewerker:
+Department
+Office
+Name
+Salary
+Holiday
+	startDate
+	endDate
+	duration

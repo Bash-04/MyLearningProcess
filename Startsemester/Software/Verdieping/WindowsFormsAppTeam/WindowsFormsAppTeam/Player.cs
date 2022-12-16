@@ -22,12 +22,12 @@ namespace WindowsFormsAppTeam
             this.FieldPosition = fieldPosition;
         }
 
-        public Player(string name) 
+        public Player(string name)
         {
             Name = name;
         }
 
-        private double SignContract()
+        private double Salary()
         {
             switch (FieldPosition)
             {
@@ -57,7 +57,7 @@ namespace WindowsFormsAppTeam
 
         public override string ToString()
         {
-            return FieldPosition + " - " + Name + " (" + Number.ToString() + ")" + " - €" + SignContract();
+            return FieldPosition + " - " + Name + " (" + Number.ToString() + ")" + " - €" + Salary();
         }
     }
 }

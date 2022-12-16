@@ -1,0 +1,14 @@
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\bin\Debug\VakantiePlanner.exe.config
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\bin\Debug\VakantiePlanner.exe
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\bin\Debug\VakantiePlanner.pdb
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\bin\Debug\VakantiePlannerModules.dll
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\bin\Debug\VakantiePlannerModules.pdb
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\obj\Debug\VakantiePlannerGUI.csproj.AssemblyReference.cache
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\obj\Debug\VakantiePlannerGUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\obj\Debug\VakantiePlanner.VakantiePlanner.resources
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\obj\Debug\VakantiePlanner.Properties.Resources.resources
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\obj\Debug\VakantiePlannerGUI.csproj.GenerateResource.cache
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\obj\Debug\VakantiePlannerGUI.csproj.CoreCompileInputs.cache
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\obj\Debug\VakantiePlannerGUI.csproj.CopyComplete
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\obj\Debug\VakantiePlanner.exe
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlanner\obj\Debug\VakantiePlanner.pdb
