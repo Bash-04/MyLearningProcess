@@ -8,17 +8,32 @@ namespace VakantiePlannerModules
     public class Department
     {
         // Properties
-        public string name { get; private set; }
-        public Office office { get; private set; }
+        public string Name { get; private set; }
+        public string Office { get; private set; }
         public int numberOfEmployees { get; private set; }
 
         // Constructors
+        public Department(string name, string office)
+        {
+            Name = name;
+            Office = office;
+        }
+
         public Department()
         {
 
         }
-
+        
         // Methods
+        List<Department> departments = new List<Department>();
+        public List<Department> GetAllDepartments()
+        {
+            Department department = new Department("Alle", Office);
+            departments.Add(department);
+
+            return departments;
+        }
+
         public void AddDepartment()
         {
             throw new System.NotImplementedException();
