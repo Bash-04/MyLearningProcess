@@ -80,6 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\VakantiePlannerDAL\VakantiePlannerDAL.csproj">
+      <Project>{3f01e024-1258-49b2-ba41-2c1cb0271c27}</Project>
+      <Name>VakantiePlannerDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VakantiePlannerModules\VakantiePlannerModules.csproj">
       <Project>{cd2d9df1-ddf0-4c6a-8fe8-da6346c3746e}</Project>
       <Name>VakantiePlannerModules</Name>

@@ -9,13 +9,22 @@ namespace VakantiePlannerModules
     public class Employee
     {
         // Properties
-        public string name { get; private set; }
-        public string office { get; private set; }
-        public string department { get; private set; }
-        public int vacationDays { get; private set; }
-        public Holiday holiday { get; private set; }
+        public string Name { get; private set; }
+        public string Email { get; private set; }
+        public int OfficeId { get; private set; }
+        public int DepartmentId { get; private set; }
+        public int VacationDays { get; private set; }
+        public Holiday Holiday { get; private set; }
 
         // Constructors
+        public Employee(string name, string email, int departmentId, int officeId)
+        {
+            Name = name;
+            Email = email;
+            DepartmentId = departmentId;
+            OfficeId = officeId;
+        }
+
         public Employee()
         {
 
@@ -24,8 +33,8 @@ namespace VakantiePlannerModules
         //  Methods
         public string GetName(string name)
         {
-            this.name = name;
-            return this.name;
+            Name = name;
+            return Name;
         }
 
         public void GetOffice()

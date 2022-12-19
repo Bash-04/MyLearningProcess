@@ -34,15 +34,15 @@
             this.lblEmployeeName = new System.Windows.Forms.Label();
             this.tbEmployeeName = new System.Windows.Forms.TextBox();
             this.groupBoxEmployee = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbEmployeeEmail = new System.Windows.Forms.TextBox();
             this.btnNewEmployee = new System.Windows.Forms.Button();
-            this.cbOfficeEmployee = new System.Windows.Forms.ComboBox();
+            this.cbEmployeeOffice = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbDepartmentEmployee = new System.Windows.Forms.ComboBox();
+            this.cbEmployeeDepartment = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxDepartment = new System.Windows.Forms.GroupBox();
             this.btnNewDepartment = new System.Windows.Forms.Button();
-            this.cbOfficeDepartment = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbDepartmentName = new System.Windows.Forms.TextBox();
             this.groupBoxOffice = new System.Windows.Forms.GroupBox();
@@ -54,7 +54,8 @@
             this.lblDepartmentChoice = new System.Windows.Forms.Label();
             this.cbDepartment = new System.Windows.Forms.ComboBox();
             this.lblEmployeeChoice = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbEmployee = new System.Windows.Forms.ComboBox();
+            this.btnNewHoliday = new System.Windows.Forms.Button();
             this.groupBoxEmployee.SuspendLayout();
             this.groupBoxDepartment.SuspendLayout();
             this.groupBoxOffice.SuspendLayout();
@@ -76,10 +77,11 @@
             this.cbOffice.Name = "cbOffice";
             this.cbOffice.Size = new System.Drawing.Size(140, 24);
             this.cbOffice.TabIndex = 4;
+            this.cbOffice.SelectedIndexChanged += new System.EventHandler(this.cbOffice_SelectedIndexChanged);
             // 
             // Calender
             // 
-            this.Calender.Location = new System.Drawing.Point(18, 225);
+            this.Calender.Location = new System.Drawing.Point(18, 168);
             this.Calender.Name = "Calender";
             this.Calender.TabIndex = 3;
             this.Calender.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.Calender_DateChanged);
@@ -102,23 +104,41 @@
             // 
             // groupBoxEmployee
             // 
+            this.groupBoxEmployee.Controls.Add(this.label1);
+            this.groupBoxEmployee.Controls.Add(this.tbEmployeeEmail);
             this.groupBoxEmployee.Controls.Add(this.btnNewEmployee);
-            this.groupBoxEmployee.Controls.Add(this.cbOfficeEmployee);
+            this.groupBoxEmployee.Controls.Add(this.cbEmployeeOffice);
             this.groupBoxEmployee.Controls.Add(this.label5);
-            this.groupBoxEmployee.Controls.Add(this.cbDepartmentEmployee);
+            this.groupBoxEmployee.Controls.Add(this.cbEmployeeDepartment);
             this.groupBoxEmployee.Controls.Add(this.label2);
             this.groupBoxEmployee.Controls.Add(this.lblEmployeeName);
             this.groupBoxEmployee.Controls.Add(this.tbEmployeeName);
-            this.groupBoxEmployee.Location = new System.Drawing.Point(590, 297);
+            this.groupBoxEmployee.Location = new System.Drawing.Point(590, 265);
             this.groupBoxEmployee.Name = "groupBoxEmployee";
-            this.groupBoxEmployee.Size = new System.Drawing.Size(198, 141);
+            this.groupBoxEmployee.Size = new System.Drawing.Size(198, 169);
             this.groupBoxEmployee.TabIndex = 8;
             this.groupBoxEmployee.TabStop = false;
             this.groupBoxEmployee.Text = "Nieuwe Medewerker";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Email:";
+            // 
+            // tbEmployeeEmail
+            // 
+            this.tbEmployeeEmail.Location = new System.Drawing.Point(56, 109);
+            this.tbEmployeeEmail.Name = "tbEmployeeEmail";
+            this.tbEmployeeEmail.Size = new System.Drawing.Size(136, 22);
+            this.tbEmployeeEmail.TabIndex = 14;
+            // 
             // btnNewEmployee
             // 
-            this.btnNewEmployee.Location = new System.Drawing.Point(9, 109);
+            this.btnNewEmployee.Location = new System.Drawing.Point(9, 137);
             this.btnNewEmployee.Name = "btnNewEmployee";
             this.btnNewEmployee.Size = new System.Drawing.Size(183, 26);
             this.btnNewEmployee.TabIndex = 12;
@@ -126,13 +146,14 @@
             this.btnNewEmployee.UseVisualStyleBackColor = true;
             this.btnNewEmployee.Click += new System.EventHandler(this.btnNewEmployee_Click);
             // 
-            // cbOfficeEmployee
+            // cbEmployeeOffice
             // 
-            this.cbOfficeEmployee.FormattingEnabled = true;
-            this.cbOfficeEmployee.Location = new System.Drawing.Point(68, 21);
-            this.cbOfficeEmployee.Name = "cbOfficeEmployee";
-            this.cbOfficeEmployee.Size = new System.Drawing.Size(124, 24);
-            this.cbOfficeEmployee.TabIndex = 11;
+            this.cbEmployeeOffice.FormattingEnabled = true;
+            this.cbEmployeeOffice.Location = new System.Drawing.Point(68, 21);
+            this.cbEmployeeOffice.Name = "cbEmployeeOffice";
+            this.cbEmployeeOffice.Size = new System.Drawing.Size(124, 24);
+            this.cbEmployeeOffice.TabIndex = 11;
+            this.cbEmployeeOffice.SelectedIndexChanged += new System.EventHandler(this.cbEmployeeOffice_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -143,13 +164,13 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Kantoor:";
             // 
-            // cbDepartmentEmployee
+            // cbEmployeeDepartment
             // 
-            this.cbDepartmentEmployee.FormattingEnabled = true;
-            this.cbDepartmentEmployee.Location = new System.Drawing.Point(71, 51);
-            this.cbDepartmentEmployee.Name = "cbDepartmentEmployee";
-            this.cbDepartmentEmployee.Size = new System.Drawing.Size(121, 24);
-            this.cbDepartmentEmployee.TabIndex = 9;
+            this.cbEmployeeDepartment.FormattingEnabled = true;
+            this.cbEmployeeDepartment.Location = new System.Drawing.Point(71, 51);
+            this.cbEmployeeDepartment.Name = "cbEmployeeDepartment";
+            this.cbEmployeeDepartment.Size = new System.Drawing.Size(121, 24);
+            this.cbEmployeeDepartment.TabIndex = 9;
             // 
             // label2
             // 
@@ -163,20 +184,18 @@
             // groupBoxDepartment
             // 
             this.groupBoxDepartment.Controls.Add(this.btnNewDepartment);
-            this.groupBoxDepartment.Controls.Add(this.cbOfficeDepartment);
-            this.groupBoxDepartment.Controls.Add(this.label3);
             this.groupBoxDepartment.Controls.Add(this.label4);
             this.groupBoxDepartment.Controls.Add(this.tbDepartmentName);
-            this.groupBoxDepartment.Location = new System.Drawing.Point(590, 154);
+            this.groupBoxDepartment.Location = new System.Drawing.Point(590, 153);
             this.groupBoxDepartment.Name = "groupBoxDepartment";
-            this.groupBoxDepartment.Size = new System.Drawing.Size(198, 111);
+            this.groupBoxDepartment.Size = new System.Drawing.Size(198, 81);
             this.groupBoxDepartment.TabIndex = 10;
             this.groupBoxDepartment.TabStop = false;
             this.groupBoxDepartment.Text = "Nieuwe Afdeling";
             // 
             // btnNewDepartment
             // 
-            this.btnNewDepartment.Location = new System.Drawing.Point(9, 79);
+            this.btnNewDepartment.Location = new System.Drawing.Point(9, 49);
             this.btnNewDepartment.Name = "btnNewDepartment";
             this.btnNewDepartment.Size = new System.Drawing.Size(183, 26);
             this.btnNewDepartment.TabIndex = 11;
@@ -184,27 +203,10 @@
             this.btnNewDepartment.UseVisualStyleBackColor = true;
             this.btnNewDepartment.Click += new System.EventHandler(this.btnNewDepartment_Click);
             // 
-            // cbOfficeDepartment
-            // 
-            this.cbOfficeDepartment.FormattingEnabled = true;
-            this.cbOfficeDepartment.Location = new System.Drawing.Point(68, 21);
-            this.cbOfficeDepartment.Name = "cbOfficeDepartment";
-            this.cbOfficeDepartment.Size = new System.Drawing.Size(124, 24);
-            this.cbOfficeDepartment.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 16);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Kantoor:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 54);
+            this.label4.Location = new System.Drawing.Point(6, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 6;
@@ -212,7 +214,7 @@
             // 
             // tbDepartmentName
             // 
-            this.tbDepartmentName.Location = new System.Drawing.Point(59, 51);
+            this.tbDepartmentName.Location = new System.Drawing.Point(59, 21);
             this.tbDepartmentName.Name = "tbDepartmentName";
             this.tbDepartmentName.Size = new System.Drawing.Size(133, 22);
             this.tbDepartmentName.TabIndex = 7;
@@ -289,6 +291,7 @@
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(137, 24);
             this.cbDepartment.TabIndex = 12;
+            this.cbDepartment.SelectedIndexChanged += new System.EventHandler(this.cbDepartment_SelectedIndexChanged);
             // 
             // lblEmployeeChoice
             // 
@@ -299,21 +302,32 @@
             this.lblEmployeeChoice.TabIndex = 15;
             this.lblEmployeeChoice.Text = "Medewerker:";
             // 
-            // comboBox2
+            // cbEmployee
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(106, 75);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(111, 24);
-            this.comboBox2.TabIndex = 14;
+            this.cbEmployee.FormattingEnabled = true;
+            this.cbEmployee.Location = new System.Drawing.Point(106, 75);
+            this.cbEmployee.Name = "cbEmployee";
+            this.cbEmployee.Size = new System.Drawing.Size(111, 24);
+            this.cbEmployee.TabIndex = 14;
+            // 
+            // btnNewHoliday
+            // 
+            this.btnNewHoliday.Location = new System.Drawing.Point(18, 387);
+            this.btnNewHoliday.Name = "btnNewHoliday";
+            this.btnNewHoliday.Size = new System.Drawing.Size(199, 51);
+            this.btnNewHoliday.TabIndex = 16;
+            this.btnNewHoliday.Text = "Plan uw vakantie in";
+            this.btnNewHoliday.UseVisualStyleBackColor = true;
+            this.btnNewHoliday.Click += new System.EventHandler(this.btnNewHoliday_Click);
             // 
             // VakantiePlanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnNewHoliday);
             this.Controls.Add(this.lblEmployeeChoice);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbEmployee);
             this.Controls.Add(this.lblDepartmentChoice);
             this.Controls.Add(this.cbDepartment);
             this.Controls.Add(this.groupBoxOffice);
@@ -345,13 +359,11 @@
         private System.Windows.Forms.TextBox tbEmployeeName;
         private System.Windows.Forms.GroupBox groupBoxEmployee;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbDepartmentEmployee;
+        private System.Windows.Forms.ComboBox cbEmployeeDepartment;
         private System.Windows.Forms.GroupBox groupBoxDepartment;
-        private System.Windows.Forms.ComboBox cbOfficeDepartment;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbDepartmentName;
-        private System.Windows.Forms.ComboBox cbOfficeEmployee;
+        private System.Windows.Forms.ComboBox cbEmployeeOffice;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBoxOffice;
         private System.Windows.Forms.Label lblLocation;
@@ -364,7 +376,10 @@
         private System.Windows.Forms.Label lblDepartmentChoice;
         private System.Windows.Forms.ComboBox cbDepartment;
         private System.Windows.Forms.Label lblEmployeeChoice;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbEmployee;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbEmployeeEmail;
+        private System.Windows.Forms.Button btnNewHoliday;
     }
 }
 

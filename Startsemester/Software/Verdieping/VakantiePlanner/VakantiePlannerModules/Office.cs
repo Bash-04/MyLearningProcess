@@ -15,6 +15,7 @@ namespace VakantiePlannerModules
         public string Location { get; private set; }
         public int NumberOfEmployees { get; private set; }
         public string Solicitor { get; private set; }
+        public string Solicitor2 { get; private set; }
 
         // Constructors
         /// <summary>
@@ -23,11 +24,13 @@ namespace VakantiePlannerModules
         /// <param name="location"></param>
         /// <param name="numberOfEmployees"></param>
         /// <param name="solicitor"></param>
-        public Office(string location, int numberOfEmployees, string solicitor)
+        /// <param name="solicitor2"></param>
+        public Office(string location, int numberOfEmployees, string solicitor, string solicitor2)
         {
             Location = location;
             NumberOfEmployees = numberOfEmployees;
             Solicitor = solicitor;
+            Solicitor2 = solicitor2;
         }
 
         /// <summary>
@@ -46,21 +49,6 @@ namespace VakantiePlannerModules
         public Office() { }
 
         // Methods
-        List<Office> offices = new List<Office>();
-        public List<Office> GetAllOffices()
-        {
-            Office office = new Office("Alle", 0, "Notaris");
-            offices.Add(office);
-            office = new Office("Deurne", 0, "Notaris");
-            offices.Add(office);
-            office = new Office("Gemert", 0, "Notaris");
-            offices.Add(office);
-            office = new Office("Uden", 0, "Notaris");
-            offices.Add(office);
-
-            return offices;
-        }
-
         public void AddEmployee()
         {
 

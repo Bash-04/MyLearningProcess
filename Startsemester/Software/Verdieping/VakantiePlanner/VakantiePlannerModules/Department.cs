@@ -9,14 +9,12 @@ namespace VakantiePlannerModules
     {
         // Properties
         public string Name { get; private set; }
-        public string Office { get; private set; }
         public int numberOfEmployees { get; private set; }
 
         // Constructors
-        public Department(string name, string office)
+        public Department(string name)
         {
             Name = name;
-            Office = office;
         }
 
         public Department()
@@ -28,7 +26,7 @@ namespace VakantiePlannerModules
         List<Department> departments = new List<Department>();
         public List<Department> GetAllDepartments()
         {
-            Department department = new Department("Alle", Office);
+            Department department = new Department("Alle");
             departments.Add(department);
 
             return departments;
