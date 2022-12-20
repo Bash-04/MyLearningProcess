@@ -9,9 +9,15 @@ namespace VakantiePlannerModules
     {
         // Properties
         public string Name { get; private set; }
-        public int numberOfEmployees { get; private set; }
+        public int NumberOfEmployees { get; private set; }
 
         // Constructors
+        public Department(string name, int numberOfEmployees)
+        {
+            Name = name;
+            NumberOfEmployees = numberOfEmployees;
+        }
+
         public Department(string name)
         {
             Name = name;

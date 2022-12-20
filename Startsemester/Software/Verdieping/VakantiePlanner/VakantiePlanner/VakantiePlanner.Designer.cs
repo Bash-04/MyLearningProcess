@@ -56,9 +56,12 @@
             this.lblEmployeeChoice = new System.Windows.Forms.Label();
             this.cbEmployee = new System.Windows.Forms.ComboBox();
             this.btnNewHoliday = new System.Windows.Forms.Button();
+            this.dgvHolidays = new System.Windows.Forms.DataGridView();
+            this.btnGetAllHolidays = new System.Windows.Forms.Button();
             this.groupBoxEmployee.SuspendLayout();
             this.groupBoxDepartment.SuspendLayout();
             this.groupBoxOffice.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHolidays)).BeginInit();
             this.SuspendLayout();
             // 
             // lblOfficeChoice
@@ -320,11 +323,33 @@
             this.btnNewHoliday.UseVisualStyleBackColor = true;
             this.btnNewHoliday.Click += new System.EventHandler(this.btnNewHoliday_Click);
             // 
+            // dgvHolidays
+            // 
+            this.dgvHolidays.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHolidays.Location = new System.Drawing.Point(269, 81);
+            this.dgvHolidays.Name = "dgvHolidays";
+            this.dgvHolidays.RowHeadersWidth = 51;
+            this.dgvHolidays.RowTemplate.Height = 24;
+            this.dgvHolidays.Size = new System.Drawing.Size(287, 357);
+            this.dgvHolidays.TabIndex = 17;
+            // 
+            // btnGetAllHolidays
+            // 
+            this.btnGetAllHolidays.Location = new System.Drawing.Point(269, 22);
+            this.btnGetAllHolidays.Name = "btnGetAllHolidays";
+            this.btnGetAllHolidays.Size = new System.Drawing.Size(287, 52);
+            this.btnGetAllHolidays.TabIndex = 18;
+            this.btnGetAllHolidays.Text = "Haal alle vakanties op";
+            this.btnGetAllHolidays.UseVisualStyleBackColor = true;
+            this.btnGetAllHolidays.Click += new System.EventHandler(this.btnGetAllHolidays_Click);
+            // 
             // VakantiePlanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGetAllHolidays);
+            this.Controls.Add(this.dgvHolidays);
             this.Controls.Add(this.btnNewHoliday);
             this.Controls.Add(this.lblEmployeeChoice);
             this.Controls.Add(this.cbEmployee);
@@ -345,6 +370,7 @@
             this.groupBoxDepartment.PerformLayout();
             this.groupBoxOffice.ResumeLayout(false);
             this.groupBoxOffice.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHolidays)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,6 +406,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbEmployeeEmail;
         private System.Windows.Forms.Button btnNewHoliday;
+        private System.Windows.Forms.DataGridView dgvHolidays;
+        private System.Windows.Forms.Button btnGetAllHolidays;
     }
 }
 

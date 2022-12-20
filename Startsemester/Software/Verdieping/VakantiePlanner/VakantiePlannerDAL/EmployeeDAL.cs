@@ -27,12 +27,13 @@ namespace VakantiePlannerDAL
                 if (databaseConnection.State == ConnectionState.Open)
                 {
                     MySqlCommand mySqlCommand = (MySqlCommand)databaseConnection.CreateCommand();
-                    mySqlCommand.CommandText = "SELECT employee.name, employee.email, department.id AS departmentId, office.id AS officeId FROM employee JOIN office ON (employee.officeId=office.id) JOIN department ON (employee.departmentId=department.id)";
+                    mySqlCommand.CommandText = "SELECT employee.id, employee.name, employee.email, department.id AS departmentId, office.id AS officeId FROM employee JOIN office ON (employee.officeId=office.id) JOIN department ON (employee.departmentId=department.id)";
                     MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
 
                     while (mySqlDataReader.Read())
                     {
                         Employee employee = new Employee(
+                            mySqlDataReader.GetInt32("id"),
                             mySqlDataReader.GetString("name"),
                             mySqlDataReader.GetString("email"),
                             mySqlDataReader.GetInt32("departmentId"),
@@ -67,7 +68,7 @@ namespace VakantiePlannerDAL
                 if (databaseConnection.State == ConnectionState.Open)
                 {
                     MySqlCommand mySqlCommand = (MySqlCommand)databaseConnection.CreateCommand();
-                    mySqlCommand.CommandText = "INSERT INTO employee (id, name, email, departmentId, officeId, holidayId) VALUES (NULL, @name, @email, @departmentId, @officeId, '');";
+                    mySqlCommand.CommandText = "INSERT INTO employee (id, name, email, departmentId, officeId) VALUES (NULL, @name, @email, @departmentId, @officeId);";
 
                     mySqlCommand.Parameters.AddWithValue("@name", newEmployee.Name);
                     mySqlCommand.Parameters.AddWithValue("@email", newEmployee.Email);
@@ -90,8 +91,9 @@ namespace VakantiePlannerDAL
             return result;
         }
 
-        public int UpdateNumberOfEmployees(int currentOffice)
+        public bool UpdateNumberOfEmployeesOffice(int currentOffice)
         {
+            bool result = false;
             int employeeCount = 0;
 
             databaseConnection = new MySqlConnection(connectionString);
@@ -111,8 +113,19 @@ namespace VakantiePlannerDAL
                         employeeCount = mySqlDataReader.GetInt32("employeeCount");
                     }
 
-                    mySqlCommand.CommandText = "UPDATE office SET numberOfEmployees = @employeeCount WHERE office.id = @currentOffice;";
+                    databaseConnection.Close();
+
+                    databaseConnection.Open();
+
+                    mySqlCommand.CommandText =
+                        "UPDATE office " +
+                        "SET numberOfEmployees = @employeeCount " +
+                        "WHERE id = @currentOffice;";
                     mySqlCommand.Parameters.AddWithValue("@employeeCount", employeeCount);
+
+                    int nrOfRowsAffected = mySqlCommand.ExecuteNonQuery();
+
+                    result = nrOfRowsAffected == 1;
                 }
             }
             catch (Exception ex)
@@ -124,7 +137,56 @@ namespace VakantiePlannerDAL
                 databaseConnection.Close();
             }
 
-            return employeeCount;
+            return result;
+        }
+
+        public bool UpdateNumberOfEmployeesDepartment(int currentDepartment)
+        {
+            bool result = false;
+            int employeeCount = 0;
+
+            databaseConnection = new MySqlConnection(connectionString);
+            try
+            {
+                databaseConnection.Open();
+                if (databaseConnection.State == ConnectionState.Open)
+                {
+                    MySqlCommand mySqlCommand = (MySqlCommand)databaseConnection.CreateCommand();
+                    mySqlCommand.CommandText = "SELECT employee.departmentId, COUNT(employee.departmentId) as employeeCount FROM employee WHERE employee.departmentId = @currentDepartment;";
+                    mySqlCommand.Parameters.AddWithValue("@currentDepartment", currentDepartment);
+
+                    MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+
+                    while (mySqlDataReader.Read())
+                    {
+                        employeeCount = mySqlDataReader.GetInt32("employeeCount");
+                    }
+
+                    databaseConnection.Close();
+
+                    databaseConnection.Open();
+
+                    mySqlCommand.CommandText =
+                        "UPDATE department " +
+                        "SET numberOfEmployees = @employeeCount " +
+                        "WHERE id = @currentDepartment;";
+                    mySqlCommand.Parameters.AddWithValue("@employeeCount", employeeCount);
+
+                    int nrOfRowsAffected = mySqlCommand.ExecuteNonQuery();
+
+                    result = nrOfRowsAffected == 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                databaseConnection.Close();
+            }
+
+            return result;
         }
     }
 }

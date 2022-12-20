@@ -8,22 +8,36 @@ namespace VakantiePlannerModules
     public class Holiday
     {
         // Properties
-        public DateTime startDate { get; private set; }
-        public DateTime endDate { get; private set; }
+        public int EmployeeId { get; private set; }
+        public DateTime StartDate { get; private set; }
+        public DateTime EndDate { get; private set; }
         public DateTime Description { get; private set; }
-        public TimeSpan duration { get; private set; }
+        public TimeSpan Duration { get; private set; }
 
         // Constructors
-        public Holiday()
+        public Holiday(int employeeId, DateTime startDate, DateTime endDate, TimeSpan duration)
         {
-
+            EmployeeId = employeeId;
+            StartDate = startDate.ToUniversalTime();
+            EndDate = endDate.ToUniversalTime();
+            Duration = duration;
         }
 
-        // Methods
-        public TimeSpan CalculateDuration()
+        public Holiday(DateTime startDate, DateTime endDate)
         {
-            duration = startDate - endDate;
-            return duration;
+            StartDate = startDate.ToUniversalTime();
+            EndDate = endDate.ToUniversalTime();
+            CalculateDuration(startDate, endDate);
+        }
+
+        public Holiday()
+        { }
+
+        // Methods
+        public TimeSpan CalculateDuration(DateTime startDate, DateTime endDate)
+        {
+            Duration = endDate - startDate;
+            return Duration;
         }
     }
 }

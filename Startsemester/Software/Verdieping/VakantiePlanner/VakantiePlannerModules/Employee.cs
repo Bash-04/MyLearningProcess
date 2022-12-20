@@ -9,6 +9,7 @@ namespace VakantiePlannerModules
     public class Employee
     {
         // Properties
+        public int Id { get; private set; }
         public string Name { get; private set; }
         public string Email { get; private set; }
         public int OfficeId { get; private set; }
@@ -17,6 +18,15 @@ namespace VakantiePlannerModules
         public Holiday Holiday { get; private set; }
 
         // Constructors
+        public Employee(int id, string name, string email, int departmentId, int officeId)
+        {
+            Id = id;
+            Name = name;
+            Email = email;
+            DepartmentId = departmentId;
+            OfficeId = officeId;
+        }
+
         public Employee(string name, string email, int departmentId, int officeId)
         {
             Name = name;

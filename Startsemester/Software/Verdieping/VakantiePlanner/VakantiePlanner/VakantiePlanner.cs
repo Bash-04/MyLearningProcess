@@ -19,39 +19,44 @@ namespace VakantiePlanner
             InitializeComponent();
         }
 
+        // Main DAL objects
         OfficeDAL officeDAL = new OfficeDAL();
         DepartmentDAL departmentDAL = new DepartmentDAL();
         EmployeeDAL employeeDAL = new EmployeeDAL();
+        HolidayDAL holidayDAL = new HolidayDAL();
 
-        private void GetAllOffices()
+        #region Getter methods
+        private List<Office> GetAllOffices()
         {
             List<Office> offices = officeDAL.GetAllOffices();
-            for (int i = 0; i < offices.Count; i++)
+            foreach (var office in offices)
             {
-                cbOffice.Items.Add(offices[i].Location);
-                cbEmployeeOffice.Items.Add(offices[i].Location);
+                cbOffice.Items.Add(office.Location);
+                cbEmployeeOffice.Items.Add(office.Location);
             }
+            return offices;
         }
 
-        private void GetAllDepartments(System.Windows.Forms.ComboBox comboBox, System.Windows.Forms.ComboBox comboBoxOffice)
+        private List<Department> GetAllDepartments(System.Windows.Forms.ComboBox comboBox, System.Windows.Forms.ComboBox comboBoxOffice)
         {
             int cbIndex = comboBox.SelectedIndex;
             List<Department> departments = departmentDAL.GetAllDepartments();
             if (comboBoxOffice.SelectedIndex != -1)
             {
                 comboBox.Items.Clear();
-                for (int i = 0; i < departments.Count; i++)
+                foreach (var department in departments)
                 {
-                    //if (comboBox == cbEmployeeDepartment || departments[i].numberOfEmployees != 0)
-                    //{
-                        comboBox.Items.Add(departments[i].Name);
-                    //}
+                    if (department.NumberOfEmployees!= 0 || comboBox == cbEmployeeDepartment)
+                    {
+                        comboBox.Items.Add(department.Name);
+                    }
                 }
             }
             comboBox.SelectedIndex = cbIndex;
+            return departments;
         }
 
-        private void GetAllEmployees()
+        private List<Employee> GetAllEmployees()
         {
             List<Employee> employees = employeeDAL.GetAllEmployees();
             if (cbOffice.SelectedIndex != -1 && cbDepartment.SelectedIndex != -1)
@@ -65,8 +70,11 @@ namespace VakantiePlanner
                     }
                 }
             }
+            return employees;
         }
+        #endregion
 
+        #region Adding methods
         private void AddNewOffice()
         {
             string location = tbOfficeName.Text;
@@ -88,28 +96,6 @@ namespace VakantiePlanner
             tbOfficeSolicitor.ResetText();
         }
 
-        private void AddNewEmployee()
-        {
-            if (cbEmployeeOffice.SelectedIndex != -1 && cbEmployeeDepartment.SelectedIndex != -1 && tbEmployeeName.Text != "" && tbEmployeeEmail.Text != "")
-            {
-                int officeId = cbEmployeeOffice.SelectedIndex + 1;
-                int departmentId = cbEmployeeDepartment.SelectedIndex + 1;
-                string name = tbEmployeeName.Text;
-                string email = tbEmployeeEmail.Text;
-
-                bool newEmployee = employeeDAL.AddNewEmployee(name, email, departmentId, officeId);
-
-                employeeDAL.UpdateNumberOfEmployees(officeId);
-
-                GetAllEmployees();
-            }
-
-            cbEmployeeOffice.ResetText();
-            cbEmployeeDepartment.ResetText();
-            tbEmployeeName.ResetText();
-            tbEmployeeEmail.ResetText();
-        }
-
         private void AddNewDepartment()
         {
             string name = tbDepartmentName.Text;
@@ -128,18 +114,48 @@ namespace VakantiePlanner
             tbDepartmentName.ResetText();
         }
 
+        private void AddNewEmployee()
+        {
+            if (cbEmployeeOffice.SelectedIndex != -1 && cbEmployeeDepartment.SelectedIndex != -1 && tbEmployeeName.Text != "" && tbEmployeeEmail.Text != "")
+            {
+                int officeId = cbEmployeeOffice.SelectedIndex + 1;
+                int departmentId = cbEmployeeDepartment.SelectedIndex + 1;
+                string name = tbEmployeeName.Text;
+                string email = tbEmployeeEmail.Text;
+
+                bool newEmployee = employeeDAL.AddNewEmployee(name, email, departmentId, officeId);
+
+                Console.WriteLine(employeeDAL.UpdateNumberOfEmployeesOffice(officeId));
+
+                GetAllEmployees();
+            }
+
+            cbEmployeeOffice.ResetText();
+            cbEmployeeDepartment.ResetText();
+            tbEmployeeName.ResetText();
+            tbEmployeeEmail.ResetText();
+        }
+        #endregion
+
         private void VakantiePlanner_Load(object sender, EventArgs e)
         {
             GetAllOffices();
             GetAllDepartments(cbDepartment, cbOffice);
             GetAllEmployees();
+            employeeDAL.UpdateNumberOfEmployeesOffice(0);
+            employeeDAL.UpdateNumberOfEmployeesDepartment(0);
         }
 
+        #region Holiday method
         private void Calender_DateChanged(object sender, DateRangeEventArgs e)
         {
             Console.WriteLine(Calender.SelectionRange);
+            Holiday holiday = new Holiday(Calender.SelectionStart, Calender.SelectionEnd);
+            Console.WriteLine(holiday.Duration);
         }
+        #endregion
 
+        #region btn New Office/Department/Employee/Holiday
         private void btnNewOffice_Click(object sender, EventArgs e)
         {
             AddNewOffice();
@@ -155,6 +171,23 @@ namespace VakantiePlanner
             AddNewEmployee();
         }
 
+        private void btnNewHoliday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGetAllHolidays_Click(object sender, EventArgs e)
+        {
+            List<Employee> employees = employeeDAL.GetAllEmployees();
+            foreach (var employee in employees)
+            {
+                Console.WriteLine(employee.Name);
+            }
+            dgvHolidays.DataSource = holidayDAL.GetAllHolidays();
+        }
+        #endregion
+
+        #region comboBox SelectedIndexChanged
         private void cbOffice_SelectedIndexChanged(object sender, EventArgs e)
         {
             GetAllDepartments(cbDepartment, cbOffice);
@@ -170,10 +203,6 @@ namespace VakantiePlanner
         {
             GetAllDepartments(cbEmployeeDepartment, cbEmployeeOffice);
         }
-
-        private void btnNewHoliday_Click(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

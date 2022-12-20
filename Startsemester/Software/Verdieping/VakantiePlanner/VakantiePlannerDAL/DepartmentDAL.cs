@@ -32,7 +32,8 @@ namespace VakantiePlannerDAL
                     while (mySqlDataReader.Read())
                     {
                         Department department = new Department(
-                            mySqlDataReader.GetString("name"));
+                            mySqlDataReader.GetString("name"),
+                            mySqlDataReader.GetInt32("numberOfEmployees"));
 
                         departments.Add(department);
                     }
