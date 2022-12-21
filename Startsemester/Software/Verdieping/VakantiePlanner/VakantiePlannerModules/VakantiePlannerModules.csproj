@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CD2D9DF1-DDF0-4C6A-8FE8-DA6346C3746E}</ProjectGuid>
+    <ProjectGuid>{65019188-DAD9-4E7A-850C-C44B86793512}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VakantiePlannerModules</RootNamespace>

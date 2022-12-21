@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VakantiePlannerGUI", "VakantiePlanner\VakantiePlannerGUI.csproj", "{9CD71BBA-4BC2-4435-BA72-2168881ADFE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VakantiePlannerGUI", "VakantiePlannerGUI\VakantiePlannerGUI.csproj", "{0613117C-3621-4ECD-8653-73911779F184}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VakantiePlannerModules", "VakantiePlannerModules\VakantiePlannerModules.csproj", "{CD2D9DF1-DDF0-4C6A-8FE8-DA6346C3746E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VakantiePlannerModules", "VakantiePlannerModules\VakantiePlannerModules.csproj", "{65019188-DAD9-4E7A-850C-C44B86793512}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VakantiePlannerDAL", "VakantiePlannerDAL\VakantiePlannerDAL.csproj", "{3F01E024-1258-49B2-BA41-2C1CB0271C27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VakantiePlannerDAL", "VakantiePlannerDAL\VakantiePlannerDAL.csproj", "{64D8D076-0F4D-4A77-B678-DC13F294CE6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9CD71BBA-4BC2-4435-BA72-2168881ADFE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CD71BBA-4BC2-4435-BA72-2168881ADFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CD71BBA-4BC2-4435-BA72-2168881ADFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CD71BBA-4BC2-4435-BA72-2168881ADFE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD2D9DF1-DDF0-4C6A-8FE8-DA6346C3746E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD2D9DF1-DDF0-4C6A-8FE8-DA6346C3746E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD2D9DF1-DDF0-4C6A-8FE8-DA6346C3746E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD2D9DF1-DDF0-4C6A-8FE8-DA6346C3746E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F01E024-1258-49B2-BA41-2C1CB0271C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F01E024-1258-49B2-BA41-2C1CB0271C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F01E024-1258-49B2-BA41-2C1CB0271C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F01E024-1258-49B2-BA41-2C1CB0271C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0613117C-3621-4ECD-8653-73911779F184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0613117C-3621-4ECD-8653-73911779F184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0613117C-3621-4ECD-8653-73911779F184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0613117C-3621-4ECD-8653-73911779F184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65019188-DAD9-4E7A-850C-C44B86793512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65019188-DAD9-4E7A-850C-C44B86793512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65019188-DAD9-4E7A-850C-C44B86793512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65019188-DAD9-4E7A-850C-C44B86793512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64D8D076-0F4D-4A77-B678-DC13F294CE6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64D8D076-0F4D-4A77-B678-DC13F294CE6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64D8D076-0F4D-4A77-B678-DC13F294CE6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64D8D076-0F4D-4A77-B678-DC13F294CE6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C1ED405D-B24C-4C73-9256-FA817F0CF557}
+		SolutionGuid = {12AA8067-3062-497B-BCB6-F792EB3FDA84}
 	EndGlobalSection
 EndGlobal

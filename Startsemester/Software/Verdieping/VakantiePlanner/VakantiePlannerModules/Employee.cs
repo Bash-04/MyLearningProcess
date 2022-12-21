@@ -1,62 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace VakantiePlannerModules
 {
     public class Employee
     {
-        // Properties
-        public int Id { get; private set; }
         public string Name { get; private set; }
+
         public string Email { get; private set; }
-        public int OfficeId { get; private set; }
-        public int DepartmentId { get; private set; }
+
         public int VacationDays { get; private set; }
-        public Holiday Holiday { get; private set; }
 
-        // Constructors
-        public Employee(int id, string name, string email, int departmentId, int officeId)
-        {
-            Id = id;
-            Name = name;
-            Email = email;
-            DepartmentId = departmentId;
-            OfficeId = officeId;
-        }
+        public List<Holiday> holidays { get; private set; }
 
-        public Employee(string name, string email, int departmentId, int officeId)
-        {
-            Name = name;
-            Email = email;
-            DepartmentId = departmentId;
-            OfficeId = officeId;
-        }
-
-        //  Methods
-        public void AddEmployee()
+        public int GetVacationDays()
         {
             throw new System.NotImplementedException();
         }
 
-        public void GetOffice()
+        public List<Holiday> GetHolidays()
         {
             throw new System.NotImplementedException();
         }
 
-        public void SetOffice()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void SetDepartment()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void GetDepartment()
+        public Holiday PlanHoliday()
         {
             throw new System.NotImplementedException();
         }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,42 +8,85 @@ namespace VakantiePlannerModules
 {
     public class Office
     {
-        // Properties
-        public List<Employee> employees { get; private set; }
+        //Properties
+        public List<Office> offices = new List<Office>();
+        public List<Department> departments { get; private set; }
 
         public string Location { get; private set; }
-        public int NumberOfEmployees { get; private set; }
-        public string Solicitor { get; private set; }
-        public string Solicitor2 { get; private set; }
 
-        // Constructors
-        /// <summary>
-        /// Giving all the information with the constructor to build the full office object
-        /// </summary>
-        /// <param name="location"></param>
-        /// <param name="numberOfEmployees"></param>
-        /// <param name="solicitor"></param>
-        /// <param name="solicitor2"></param>
-        public Office(string location, int numberOfEmployees, string solicitor, string solicitor2)
+        //Constructors
+        public Office(string location)
         {
+            departments = new List<Department>();
             Location = location;
-            NumberOfEmployees = numberOfEmployees;
-            Solicitor = solicitor;
-            Solicitor2 = solicitor2;
         }
 
-        /// <summary>
-        /// Constructor to just give the location through
-        /// </summary>
-        /// <param name="location"></param>
-        public Office(string location, string solicitor) 
+        public Office() { }
+
+        //Methods
+        public List<Office> GetAllOffices()
         {
-            Location = location;
-            Solicitor = solicitor;
+            return offices;
         }
 
-        // Methods
-        public void AddOffice()
+        public string TryAddOffice(string location)
+        {
+            string officeMayBeAdded = "Office may not be added";
+            Office office = new Office(location);
+            if (OfficeMayBeAdded(office))
+            {
+                offices.Add(office);
+                officeMayBeAdded = "Office has been added";
+            }
+
+            return officeMayBeAdded;
+        }
+
+        private bool OfficeMayBeAdded(Office newOffice)
+        {
+            bool officeMayBeAdded = true;
+            foreach (var office in offices)
+            {
+                if (offices.Contains(newOffice) == true)
+                {
+                    officeMayBeAdded = false;
+                }
+            }
+            return officeMayBeAdded;
+        }
+
+        public List<Department> GetAllDepartments()
+        {
+            return departments;
+        }
+
+        public string TryAddDepartment(string departmentName)
+        {
+            string departmentMayBeAdded = "Department may not be added";
+            Department department = new Department(departmentName);
+            if (DepartmentMayBeAdded(department))
+            {
+                departments.Add(department);
+                departmentMayBeAdded = "Department has been added";
+            }
+
+            return departmentMayBeAdded;
+        }
+
+        private bool DepartmentMayBeAdded(Department newDepartment)
+        {
+            bool departmentMayBeAdded = true;
+            foreach (var department in departments)
+            {
+                if (departments.Contains(newDepartment) == true)
+                {
+                    departmentMayBeAdded = false;
+                }
+            }
+            return departmentMayBeAdded;
+        }
+
+        public int GetNrOfEmployees()
         {
             throw new System.NotImplementedException();
         }
