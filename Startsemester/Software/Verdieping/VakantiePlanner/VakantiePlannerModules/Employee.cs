@@ -35,16 +35,10 @@ namespace VakantiePlannerModules
             OfficeId = officeId;
         }
 
-        public Employee()
-        {
-
-        }
-
         //  Methods
-        public string GetName(string name)
+        public void AddEmployee()
         {
-            Name = name;
-            return Name;
+            throw new System.NotImplementedException();
         }
 
         public void GetOffice()
@@ -63,16 +57,6 @@ namespace VakantiePlannerModules
         }
 
         public void GetDepartment()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void GetHoliday()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void SetHoliday()
         {
             throw new System.NotImplementedException();
         }

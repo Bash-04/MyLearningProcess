@@ -47,7 +47,8 @@ namespace WindowsFormsAppTeam
             {
                 Team team = teams[selectedTeam];
 
-                team.TryAddPlayers(player);
+                //team.TryAddPlayers(player);
+                Console.WriteLine(team.TryAddPlayers(player));
 
                 ShowTeam();
             }
@@ -80,12 +81,6 @@ namespace WindowsFormsAppTeam
             for (int i = 0; i < team.players.Count; i++) {
                 lbPlayers.Items.Add(team.players[i]);
             }
-            //int i = 0;
-            //while (team.players[i] != null)
-            //{
-            //    lbPlayers.Items.Add(team.players[i]);
-            //    i++;
-            //}
         }
 
         private void ShowTeams()

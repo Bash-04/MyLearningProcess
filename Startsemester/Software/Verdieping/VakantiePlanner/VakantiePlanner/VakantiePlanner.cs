@@ -19,11 +19,12 @@ namespace VakantiePlanner
             InitializeComponent();
         }
 
-        // Main DAL objects
+        #region Main DAL objects
         OfficeDAL officeDAL = new OfficeDAL();
         DepartmentDAL departmentDAL = new DepartmentDAL();
         EmployeeDAL employeeDAL = new EmployeeDAL();
         HolidayDAL holidayDAL = new HolidayDAL();
+        #endregion
 
         #region Getter methods
         private List<Office> GetAllOffices()
@@ -125,7 +126,7 @@ namespace VakantiePlanner
 
                 bool newEmployee = employeeDAL.AddNewEmployee(name, email, departmentId, officeId);
 
-                Console.WriteLine(employeeDAL.UpdateNumberOfEmployeesOffice(officeId));
+                UpdateNumberOfEmployees();
 
                 GetAllEmployees();
             }
@@ -137,13 +138,30 @@ namespace VakantiePlanner
         }
         #endregion
 
+        #region Update methods
+        private bool UpdateNumberOfEmployees()
+        {
+            bool result = false;
+
+            int i = 0;
+            while (i <= officeDAL.GetAllOffices().Count || i <= departmentDAL.GetAllDepartments().Count)
+            {
+                employeeDAL.UpdateNumberOfEmployeesOffice(i);
+                employeeDAL.UpdateNumberOfEmployeesDepartment(i);
+                i++;
+                result = true;
+            }
+
+            return result;
+        }
+        #endregion
+
         private void VakantiePlanner_Load(object sender, EventArgs e)
         {
             GetAllOffices();
             GetAllDepartments(cbDepartment, cbOffice);
             GetAllEmployees();
-            employeeDAL.UpdateNumberOfEmployeesOffice(0);
-            employeeDAL.UpdateNumberOfEmployeesDepartment(0);
+            UpdateNumberOfEmployees();
         }
 
         #region Holiday method

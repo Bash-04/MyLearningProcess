@@ -43,15 +43,10 @@ namespace VakantiePlannerModules
             Solicitor = solicitor;
         }
 
-        /// <summary>
-        /// Empty constructor
-        /// </summary>
-        public Office() { }
-
         // Methods
-        public void AddEmployee()
+        public void AddOffice()
         {
-
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -26,16 +26,21 @@ namespace VakantiePlannerDAL
                 if (databaseConnection.State == ConnectionState.Open)
                 {
                     MySqlCommand mySqlCommand = (MySqlCommand)databaseConnection.CreateCommand();
-                    mySqlCommand.CommandText = "SELECT employeeId, startDate, endDate, duration FROM holiday;";
+                    mySqlCommand.CommandText = "SELECT employeeId, startDate, endDate, description FROM holiday;";
                     MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
 
                     while (mySqlDataReader.Read())
                     {
+                        //Holiday holiday = new Holiday(
+                        //    mySqlDataReader.GetInt32("employeeId"),
+                        //    mySqlDataReader.GetDateTime("startDate"),
+                        //    mySqlDataReader.GetDateTime("endDate"),
+                        //    mySqlDataReader.GetTimeSpan("duration"));
                         Holiday holiday = new Holiday(
                             mySqlDataReader.GetInt32("employeeId"),
                             mySqlDataReader.GetDateTime("startDate"),
                             mySqlDataReader.GetDateTime("endDate"),
-                            mySqlDataReader.GetTimeSpan("duration"));
+                            mySqlDataReader.GetString("description"));
 
                         holidays.Add(holiday);
                     }

@@ -46,20 +46,87 @@ namespace WindowsFormsAppTeam
             this.city = city;
         }
 
-        public void TryAddPlayers(Player player)    // van void naar bool en alle checks toevoegen of een player wel toegevoegd mag worden
+        public bool TryAddPlayers(Player newPlayer)
         {
-            //bool succes = false;
-            //if (PlayerCanBeAdded(player) == true)
-            //    succes = true;
-            //{
-                this.players.Add(player);
-            //}
-            //return succes;
+            bool succes = false;
+
+            if (PlayerCanBeAdded(newPlayer) == true)
+            {
+                succes = true;
+                players.Add(newPlayer);
+            }
+            return succes;
         }
 
-        private bool PlayerCanBeAdded(Player player)
+        private bool PlayerCanBeAdded(Player newPlayer)
         {
-            throw new NotImplementedException();
+            bool succes = false;
+
+            int goalkeeper = 0;
+            int defenders = 0;
+            int midfielders = 0;
+            int attackers = 0;
+
+            if (players.Count != 15)
+            {
+                foreach (Player player in players)
+                {
+                    switch (player.FieldPosition)
+                    {
+                        case FieldPosition.GoalKeeper:
+                            goalkeeper += 1;
+                            break;
+
+                        case FieldPosition.Defender:
+                            defenders += 1;
+                            break;
+
+                        case FieldPosition.Midfielder:
+                            midfielders += 1;
+                            break;
+
+                        case FieldPosition.Attacker:
+                            attackers += 1;
+                            break;
+                    }
+                }
+
+                switch (newPlayer.FieldPosition)
+                {
+                    case FieldPosition.GoalKeeper:
+                        if (goalkeeper < 1)
+                        {
+                            succes = true;
+                        }
+                        break;
+
+                    case FieldPosition.Defender:
+                        if (defenders < 5)
+                        {
+                            succes = true;
+                        }
+                        break;
+
+                    case FieldPosition.Midfielder:
+                        if (midfielders < 5)
+                        {
+                            succes = true;
+                        }
+                        break;
+
+                    case FieldPosition.Attacker:
+                        if (attackers < 4)
+                        {
+                            succes = true;
+                        }
+                        break;
+
+                    default:
+                        return succes = false;
+                }
+            }
+
+            return succes;
         }
 
         public override string ToString()
