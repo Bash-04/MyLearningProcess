@@ -9,18 +9,18 @@ namespace VakantiePlannerModules
     public class Company
     {
         //Properties
-        public List<Office> offices { get; private set; }
+        public List<Office> Offices { get; private set; }
 
         //Constructors
         public Company() 
         {
-            offices = new List<Office>();
+            Offices = new List<Office>();
         }
 
         //Methods
         public List<Office> GetAllOffices()
         {
-            return offices;
+            return Offices;
         }
 
         public string TryAddOffice(string location)
@@ -29,7 +29,7 @@ namespace VakantiePlannerModules
             Office office = new Office(location);
             if (OfficeMayBeAdded(office))
             {
-                offices.Add(office);
+                Offices.Add(office);
                 officeMayBeAdded = "Office has been added";
             }
 
@@ -39,9 +39,9 @@ namespace VakantiePlannerModules
         private bool OfficeMayBeAdded(Office newOffice)
         {
             bool officeMayBeAdded = true;
-            foreach (var office in offices)
+            foreach (var office in Offices)
             {
-                if (offices.Contains(newOffice) == true)
+                if (Offices.Contains(newOffice) == true)
                 {
                     officeMayBeAdded = false;
                 }

@@ -9,17 +9,17 @@ namespace VakantiePlannerModules
     public class Department
     {
         //Properties
-        public List<Employee> employees { get; private set; }
-        public List<Holiday> holidays { get; private set; }
+        public List<Employee> Employees { get; private set; }
+        public List<Holiday> Holidays { get; private set; }
 
         public string Name { get; private set; }
 
         //Constructors
         public Department(string departmentName)
         {
-            employees = new List<Employee>();
+            Employees = new List<Employee>();
             Employee employee = new Employee("Alle", "alle@gvgn.nl");
-            employees.Add(employee);
+            Employees.Add(employee);
             Name = departmentName;
         }
 
@@ -28,7 +28,7 @@ namespace VakantiePlannerModules
         //Methods
         public List<Employee> GetAllEmployees()
         {
-            return employees;
+            return Employees;
         }
 
         public string TryAddEmployee(string name, string email)
@@ -37,7 +37,7 @@ namespace VakantiePlannerModules
             Employee employee = new Employee(name, email);
             if (EmployeeMayBeAdded(employee))
             {
-                employees.Add(employee);
+                Employees.Add(employee);
                 employeeMayBeAdded = "Employee has been added";
             }
 
@@ -47,9 +47,9 @@ namespace VakantiePlannerModules
         private bool EmployeeMayBeAdded(Employee newEmployee)
         {
             bool employeeMayBeAdded = true;
-            foreach (var employee in employees)
+            foreach (var employee in Employees)
             {
-                if (employees.Contains(newEmployee) == true)
+                if (Employees.Contains(newEmployee) == true)
                 {
                     employeeMayBeAdded = false;
                 }

@@ -9,7 +9,7 @@ namespace VakantiePlannerModules
     public class Employee
     {
         //Properties
-        public List<Holiday> holidays { get; private set; }
+        public List<Holiday> Holidays { get; private set; }
 
         public string Name { get; private set; }
         public string Email { get; private set; }

@@ -9,16 +9,16 @@ namespace VakantiePlannerModules
     public class Office
     {
         //Properties
-        public List<Department> departments { get; private set; }
+        public List<Department> Departments { get; private set; }
 
         public string Location { get; private set; }
 
         //Constructors
         public Office(string location)
         {
-            departments = new List<Department>();
+            Departments = new List<Department>();
             Department department = new Department("Notaris");
-            departments.Add(department);
+            Departments.Add(department);
             Location = location;
         }
 
@@ -27,7 +27,7 @@ namespace VakantiePlannerModules
         //Methods
         public List<Department> GetAllDepartments()
         {
-            return departments;
+            return Departments;
         }
 
         public string TryAddDepartment(string departmentName)
@@ -36,7 +36,7 @@ namespace VakantiePlannerModules
             Department department = new Department(departmentName);
             if (DepartmentMayBeAdded(department))
             {
-                departments.Add(department);
+                Departments.Add(department);
                 departmentMayBeAdded = "Department has been added";
             }
 
@@ -46,9 +46,9 @@ namespace VakantiePlannerModules
         private bool DepartmentMayBeAdded(Department newDepartment)
         {
             bool departmentMayBeAdded = true;
-            foreach (var department in departments)
+            foreach (var department in Departments)
             {
-                if (departments.Contains(newDepartment) == true)
+                if (Departments.Contains(newDepartment) == true)
                 {
                     departmentMayBeAdded = false;
                 }
