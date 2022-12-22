@@ -69,7 +69,7 @@
             this.btnGetAllHolidays.Location = new System.Drawing.Point(269, 22);
             this.btnGetAllHolidays.Name = "btnGetAllHolidays";
             this.btnGetAllHolidays.Size = new System.Drawing.Size(287, 52);
-            this.btnGetAllHolidays.TabIndex = 31;
+            this.btnGetAllHolidays.TabIndex = 6;
             this.btnGetAllHolidays.Text = "Haal alle vakanties op";
             this.btnGetAllHolidays.UseVisualStyleBackColor = true;
             // 
@@ -81,14 +81,14 @@
             this.dgvHolidays.RowHeadersWidth = 51;
             this.dgvHolidays.RowTemplate.Height = 24;
             this.dgvHolidays.Size = new System.Drawing.Size(287, 357);
-            this.dgvHolidays.TabIndex = 30;
+            this.dgvHolidays.TabIndex = 17;
             // 
             // btnNewHoliday
             // 
             this.btnNewHoliday.Location = new System.Drawing.Point(18, 387);
             this.btnNewHoliday.Name = "btnNewHoliday";
             this.btnNewHoliday.Size = new System.Drawing.Size(199, 51);
-            this.btnNewHoliday.TabIndex = 29;
+            this.btnNewHoliday.TabIndex = 5;
             this.btnNewHoliday.Text = "Plan uw vakantie in";
             this.btnNewHoliday.UseVisualStyleBackColor = true;
             // 
@@ -107,7 +107,7 @@
             this.cbEmployee.Location = new System.Drawing.Point(106, 75);
             this.cbEmployee.Name = "cbEmployee";
             this.cbEmployee.Size = new System.Drawing.Size(111, 24);
-            this.cbEmployee.TabIndex = 27;
+            this.cbEmployee.TabIndex = 3;
             // 
             // lblDepartmentChoice
             // 
@@ -124,7 +124,8 @@
             this.cbDepartment.Location = new System.Drawing.Point(80, 45);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(137, 24);
-            this.cbDepartment.TabIndex = 25;
+            this.cbDepartment.TabIndex = 2;
+            this.cbDepartment.SelectedIndexChanged += new System.EventHandler(this.cbDepartment_SelectedIndexChanged);
             // 
             // groupBoxDepartment
             // 
@@ -146,7 +147,8 @@
             this.cbDepartmentOffice.Location = new System.Drawing.Point(68, 21);
             this.cbDepartmentOffice.Name = "cbDepartmentOffice";
             this.cbDepartmentOffice.Size = new System.Drawing.Size(124, 24);
-            this.cbDepartmentOffice.TabIndex = 16;
+            this.cbDepartmentOffice.TabIndex = 9;
+            this.cbDepartmentOffice.SelectedIndexChanged += new System.EventHandler(this.cbDepartmentOffice_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -162,7 +164,7 @@
             this.btnNewDepartment.Location = new System.Drawing.Point(9, 79);
             this.btnNewDepartment.Name = "btnNewDepartment";
             this.btnNewDepartment.Size = new System.Drawing.Size(183, 26);
-            this.btnNewDepartment.TabIndex = 10;
+            this.btnNewDepartment.TabIndex = 11;
             this.btnNewDepartment.Text = "Voeg nieuwe afdeling toe";
             this.btnNewDepartment.UseVisualStyleBackColor = true;
             this.btnNewDepartment.Click += new System.EventHandler(this.btnNewDepartment_Click);
@@ -181,14 +183,14 @@
             this.tbDepartmentName.Location = new System.Drawing.Point(59, 51);
             this.tbDepartmentName.Name = "tbDepartmentName";
             this.tbDepartmentName.Size = new System.Drawing.Size(133, 22);
-            this.tbDepartmentName.TabIndex = 7;
+            this.tbDepartmentName.TabIndex = 10;
             // 
             // tbOfficeLocation
             // 
             this.tbOfficeLocation.Location = new System.Drawing.Point(62, 21);
             this.tbOfficeLocation.Name = "tbOfficeLocation";
             this.tbOfficeLocation.Size = new System.Drawing.Size(130, 22);
-            this.tbOfficeLocation.TabIndex = 9;
+            this.tbOfficeLocation.TabIndex = 7;
             // 
             // groupBoxOffice
             // 
@@ -207,7 +209,7 @@
             this.btnNewOffice.Location = new System.Drawing.Point(9, 49);
             this.btnNewOffice.Name = "btnNewOffice";
             this.btnNewOffice.Size = new System.Drawing.Size(183, 26);
-            this.btnNewOffice.TabIndex = 11;
+            this.btnNewOffice.TabIndex = 8;
             this.btnNewOffice.Text = "Voeg nieuw kantoor toe";
             this.btnNewOffice.UseVisualStyleBackColor = true;
             this.btnNewOffice.Click += new System.EventHandler(this.btnNewOffice_Click);
@@ -253,16 +255,17 @@
             this.tbEmployeeEmail.Location = new System.Drawing.Point(56, 109);
             this.tbEmployeeEmail.Name = "tbEmployeeEmail";
             this.tbEmployeeEmail.Size = new System.Drawing.Size(136, 22);
-            this.tbEmployeeEmail.TabIndex = 14;
+            this.tbEmployeeEmail.TabIndex = 15;
             // 
             // btnNewEmployee
             // 
             this.btnNewEmployee.Location = new System.Drawing.Point(9, 137);
             this.btnNewEmployee.Name = "btnNewEmployee";
             this.btnNewEmployee.Size = new System.Drawing.Size(183, 26);
-            this.btnNewEmployee.TabIndex = 12;
+            this.btnNewEmployee.TabIndex = 16;
             this.btnNewEmployee.Text = "Voeg medewerker toe";
             this.btnNewEmployee.UseVisualStyleBackColor = true;
+            this.btnNewEmployee.Click += new System.EventHandler(this.btnNewEmployee_Click);
             // 
             // cbEmployeeOffice
             // 
@@ -270,7 +273,8 @@
             this.cbEmployeeOffice.Location = new System.Drawing.Point(68, 21);
             this.cbEmployeeOffice.Name = "cbEmployeeOffice";
             this.cbEmployeeOffice.Size = new System.Drawing.Size(124, 24);
-            this.cbEmployeeOffice.TabIndex = 11;
+            this.cbEmployeeOffice.TabIndex = 12;
+            this.cbEmployeeOffice.SelectedIndexChanged += new System.EventHandler(this.cbEmployeeOffice_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -287,7 +291,8 @@
             this.cbEmployeeDepartment.Location = new System.Drawing.Point(71, 51);
             this.cbEmployeeDepartment.Name = "cbEmployeeDepartment";
             this.cbEmployeeDepartment.Size = new System.Drawing.Size(121, 24);
-            this.cbEmployeeDepartment.TabIndex = 9;
+            this.cbEmployeeDepartment.TabIndex = 13;
+            this.cbEmployeeDepartment.SelectedIndexChanged += new System.EventHandler(this.cbEmployeeDepartment_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -312,7 +317,7 @@
             this.tbEmployeeName.Location = new System.Drawing.Point(59, 81);
             this.tbEmployeeName.Name = "tbEmployeeName";
             this.tbEmployeeName.Size = new System.Drawing.Size(133, 22);
-            this.tbEmployeeName.TabIndex = 7;
+            this.tbEmployeeName.TabIndex = 14;
             // 
             // lblOfficeChoice
             // 
@@ -329,14 +334,14 @@
             this.cbOffice.Location = new System.Drawing.Point(77, 15);
             this.cbOffice.Name = "cbOffice";
             this.cbOffice.Size = new System.Drawing.Size(140, 24);
-            this.cbOffice.TabIndex = 20;
+            this.cbOffice.TabIndex = 1;
             this.cbOffice.SelectedIndexChanged += new System.EventHandler(this.cbOffice_SelectedIndexChanged);
             // 
             // Calender
             // 
             this.Calender.Location = new System.Drawing.Point(18, 168);
             this.Calender.Name = "Calender";
-            this.Calender.TabIndex = 19;
+            this.Calender.TabIndex = 4;
             // 
             // VakantiePlanner
             // 

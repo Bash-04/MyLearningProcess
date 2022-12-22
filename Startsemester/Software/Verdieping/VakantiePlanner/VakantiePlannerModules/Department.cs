@@ -8,27 +8,53 @@ namespace VakantiePlannerModules
 {
     public class Department
     {
-        public string Name { get; private set; }
-
+        //Properties
         public List<Employee> employees { get; private set; }
-
         public List<Holiday> holidays { get; private set; }
+
+        public string Name { get; private set; }
 
         //Constructors
         public Department(string departmentName)
         {
+            employees = new List<Employee>();
+            Employee employee = new Employee("Alle", "alle@gvgn.nl");
+            employees.Add(employee);
             Name = departmentName;
         }
+
         public Department() { }
 
-        public List<Employee> GetEmployees()
+        //Methods
+        public List<Employee> GetAllEmployees()
         {
-            throw new System.NotImplementedException();
+            return employees;
         }
 
-        public Employee AddEmployee()
+        public string TryAddEmployee(string name, string email)
         {
-            throw new System.NotImplementedException();
+            string employeeMayBeAdded = "Employee may not be added";
+            Employee employee = new Employee(name, email);
+            if (EmployeeMayBeAdded(employee))
+            {
+                employees.Add(employee);
+                employeeMayBeAdded = "Employee has been added";
+            }
+
+            return employeeMayBeAdded;
+        }
+
+        private bool EmployeeMayBeAdded(Employee newEmployee)
+        {
+            bool employeeMayBeAdded = true;
+            foreach (var employee in employees)
+            {
+                if (employees.Contains(newEmployee) == true)
+                {
+                    employeeMayBeAdded = false;
+                }
+            }
+            return employeeMayBeAdded;
         }
 
         public string GetName()
