@@ -21,6 +21,12 @@ namespace VakantiePlannerGUI
         int selectedOffice = -1;
         int selectedDepartment = -1;
 
+        public VakantiePlanner()
+        {
+            InitializeComponent();
+            AddOfficesToComboBox();
+        }
+
         #region add to combobox
         private void AddOfficesToComboBox()
         {
@@ -56,16 +62,16 @@ namespace VakantiePlannerGUI
         }
         #endregion
 
-        #region new .. functions
+        #region new object functions
         private void NewOffice()
         {
             string location = tbOfficeLocation.Text;
             Console.WriteLine(company.TryAddOffice(location));
             AddOfficesToComboBox();
-            ResetOfficeInput();
+            ResetOfficeInputFields();
         }
 
-        private void ResetOfficeInput()
+        private void ResetOfficeInputFields()
         {
             tbOfficeLocation.ResetText();
         }
@@ -79,7 +85,7 @@ namespace VakantiePlannerGUI
                 office = company.GetAllOffices()[selectedOffice];
                 Console.WriteLine(office.TryAddDepartment(departmentName));
                 AddDepartmentsToComboBox(cbDepartment);
-                ResetDepartmentInput();
+                ResetDepartmentInputFields();
             }
             else
             {
@@ -87,7 +93,7 @@ namespace VakantiePlannerGUI
             }
         }
 
-        private void ResetDepartmentInput()
+        private void ResetDepartmentInputFields()
         {
             cbDepartmentOffice.ResetText();
             tbDepartmentName.ResetText();
@@ -104,7 +110,7 @@ namespace VakantiePlannerGUI
                 department = office.GetAllDepartments()[selectedDepartment];
                 Console.WriteLine(department.TryAddEmployee(employeeName, employeeEmail));
                 AddEmployeesToComboBox();
-                ResetEmployeeInput();
+                ResetEmployeeInputFields();
             }
             else
             {
@@ -112,7 +118,7 @@ namespace VakantiePlannerGUI
             }
         }
 
-        private void ResetEmployeeInput()
+        private void ResetEmployeeInputFields()
         {
             cbEmployeeOffice.ResetText();
             cbEmployeeDepartment.ResetText();
@@ -120,12 +126,6 @@ namespace VakantiePlannerGUI
             tbEmployeeEmail.ResetText();
         }
         #endregion
-
-        public VakantiePlanner()
-        {
-            InitializeComponent();
-            AddOfficesToComboBox();
-        }
 
         #region btn new object
         private void btnNewOffice_Click(object sender, EventArgs e)
@@ -144,6 +144,7 @@ namespace VakantiePlannerGUI
         }
         #endregion
 
+        #region ComboBoxen
         private void cbOffice_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedOffice = cbOffice.SelectedIndex;
@@ -175,5 +176,6 @@ namespace VakantiePlannerGUI
             selectedOffice = cbEmployeeOffice.SelectedIndex;
             selectedOffice = 0;
         }
+#endregion
     }
 }
