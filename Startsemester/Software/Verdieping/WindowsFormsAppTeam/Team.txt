@@ -1,0 +1,13 @@
+Team
+Name
+City
+
+Person
+Name
+Salary
+-->
+	Player
+	Position
+	Number
+
+	Coach
