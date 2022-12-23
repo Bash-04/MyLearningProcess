@@ -17,9 +17,12 @@ namespace VakantiePlannerGUI
         Company company = new Company();
         Office office = new Office();
         Department department = new Department();
+        Employee employee = new Employee();
+        Holiday holiday = new Holiday();
 
         int selectedOffice = -1;
         int selectedDepartment = -1;
+        int selectedEmployee = -1;
 
         public VakantiePlanner()
         {
@@ -27,7 +30,7 @@ namespace VakantiePlannerGUI
             AddOfficesToComboBox();
         }
 
-        #region add to combobox
+        #region add results to GUI
         private void AddOfficesToComboBox()
         {
             cbOffice.Items.Clear();
@@ -59,6 +62,11 @@ namespace VakantiePlannerGUI
             {
                 cbEmployee.Items.Add(employee.Name);
             }
+        }
+
+        private void AddHolidaysToDGV()
+        {
+            dgvHolidays.DataSource = employee.GetHolidays()[selectedEmployee];
         }
         #endregion
 
@@ -125,6 +133,35 @@ namespace VakantiePlannerGUI
             tbEmployeeName.ResetText();
             tbEmployeeEmail.ResetText();
         }
+
+        private void PlanNewHoliday()
+        {
+            DateTime startDate = dateTimePickerHolidayStartDate.Value.Date;
+            DateTime endDate = dateTimePickerHolidayEndDate.Value.Date;
+            string description = tbHolidayDescription.Text;
+            selectedOffice = cbOffice.SelectedIndex;
+            selectedDepartment = cbDepartment.SelectedIndex;
+            selectedEmployee = cbEmployee.SelectedIndex;
+
+            if (selectedOffice != -1 && selectedDepartment != -1 && selectedEmployee != -1)
+            {
+                employee = department.GetAllEmployees()[selectedEmployee];
+                Console.WriteLine(employee.TryPlanHoliday(startDate, endDate, description));
+                AddHolidaysToDGV();
+                ResetHolidayInputFields();
+            }
+            else
+            {
+                MessageBox.Show("selecteer eerst een kantoor en een department");
+            }
+        }
+
+        private void ResetHolidayInputFields()
+        {
+            dateTimePickerHolidayStartDate.ResetText();
+            dateTimePickerHolidayEndDate.ResetText();
+            tbHolidayDescription.ResetText();
+        }
         #endregion
 
         #region btn new object
@@ -141,6 +178,11 @@ namespace VakantiePlannerGUI
         private void btnNewEmployee_Click(object sender, EventArgs e)
         {
             NewEmployee();
+        }
+
+        private void btnPlanNewHoliday_Click(object sender, EventArgs e)
+        {
+            PlanNewHoliday();
         }
         #endregion
 
@@ -176,6 +218,6 @@ namespace VakantiePlannerGUI
             selectedOffice = cbEmployeeOffice.SelectedIndex;
             selectedOffice = 0;
         }
-#endregion
+        #endregion
     }
 }

@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnGetAllHolidays = new System.Windows.Forms.Button();
             this.dgvHolidays = new System.Windows.Forms.DataGridView();
-            this.btnNewHoliday = new System.Windows.Forms.Button();
+            this.btnPlanNewHoliday = new System.Windows.Forms.Button();
             this.lblEmployeeChoice = new System.Windows.Forms.Label();
             this.cbEmployee = new System.Windows.Forms.ComboBox();
             this.lblDepartmentChoice = new System.Windows.Forms.Label();
@@ -57,45 +56,42 @@
             this.tbEmployeeName = new System.Windows.Forms.TextBox();
             this.lblOfficeChoice = new System.Windows.Forms.Label();
             this.cbOffice = new System.Windows.Forms.ComboBox();
-            this.Calender = new System.Windows.Forms.MonthCalendar();
+            this.dateTimePickerHolidayStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerHolidayEndDate = new System.Windows.Forms.DateTimePicker();
+            this.tbHolidayDescription = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHolidays)).BeginInit();
             this.groupBoxDepartment.SuspendLayout();
             this.groupBoxOffice.SuspendLayout();
             this.groupBoxEmployee.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnGetAllHolidays
-            // 
-            this.btnGetAllHolidays.Location = new System.Drawing.Point(269, 22);
-            this.btnGetAllHolidays.Name = "btnGetAllHolidays";
-            this.btnGetAllHolidays.Size = new System.Drawing.Size(287, 52);
-            this.btnGetAllHolidays.TabIndex = 6;
-            this.btnGetAllHolidays.Text = "Haal alle vakanties op";
-            this.btnGetAllHolidays.UseVisualStyleBackColor = true;
-            // 
             // dgvHolidays
             // 
             this.dgvHolidays.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHolidays.Location = new System.Drawing.Point(269, 81);
+            this.dgvHolidays.Location = new System.Drawing.Point(223, 12);
             this.dgvHolidays.Name = "dgvHolidays";
             this.dgvHolidays.RowHeadersWidth = 51;
             this.dgvHolidays.RowTemplate.Height = 24;
-            this.dgvHolidays.Size = new System.Drawing.Size(287, 357);
+            this.dgvHolidays.Size = new System.Drawing.Size(361, 261);
             this.dgvHolidays.TabIndex = 17;
             // 
-            // btnNewHoliday
+            // btnPlanNewHoliday
             // 
-            this.btnNewHoliday.Location = new System.Drawing.Point(18, 387);
-            this.btnNewHoliday.Name = "btnNewHoliday";
-            this.btnNewHoliday.Size = new System.Drawing.Size(199, 51);
-            this.btnNewHoliday.TabIndex = 5;
-            this.btnNewHoliday.Text = "Plan uw vakantie in";
-            this.btnNewHoliday.UseVisualStyleBackColor = true;
+            this.btnPlanNewHoliday.Location = new System.Drawing.Point(332, 383);
+            this.btnPlanNewHoliday.Name = "btnPlanNewHoliday";
+            this.btnPlanNewHoliday.Size = new System.Drawing.Size(225, 51);
+            this.btnPlanNewHoliday.TabIndex = 5;
+            this.btnPlanNewHoliday.Text = "Plan uw vakantie in";
+            this.btnPlanNewHoliday.UseVisualStyleBackColor = true;
+            this.btnPlanNewHoliday.Click += new System.EventHandler(this.btnPlanNewHoliday_Click);
             // 
             // lblEmployeeChoice
             // 
             this.lblEmployeeChoice.AutoSize = true;
-            this.lblEmployeeChoice.Location = new System.Drawing.Point(15, 78);
+            this.lblEmployeeChoice.Location = new System.Drawing.Point(15, 75);
             this.lblEmployeeChoice.Name = "lblEmployeeChoice";
             this.lblEmployeeChoice.Size = new System.Drawing.Size(85, 16);
             this.lblEmployeeChoice.TabIndex = 28;
@@ -104,7 +100,7 @@
             // cbEmployee
             // 
             this.cbEmployee.FormattingEnabled = true;
-            this.cbEmployee.Location = new System.Drawing.Point(106, 75);
+            this.cbEmployee.Location = new System.Drawing.Point(106, 72);
             this.cbEmployee.Name = "cbEmployee";
             this.cbEmployee.Size = new System.Drawing.Size(111, 24);
             this.cbEmployee.TabIndex = 3;
@@ -112,7 +108,7 @@
             // lblDepartmentChoice
             // 
             this.lblDepartmentChoice.AutoSize = true;
-            this.lblDepartmentChoice.Location = new System.Drawing.Point(15, 48);
+            this.lblDepartmentChoice.Location = new System.Drawing.Point(15, 45);
             this.lblDepartmentChoice.Name = "lblDepartmentChoice";
             this.lblDepartmentChoice.Size = new System.Drawing.Size(59, 16);
             this.lblDepartmentChoice.TabIndex = 26;
@@ -121,7 +117,7 @@
             // cbDepartment
             // 
             this.cbDepartment.FormattingEnabled = true;
-            this.cbDepartment.Location = new System.Drawing.Point(80, 45);
+            this.cbDepartment.Location = new System.Drawing.Point(80, 42);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(137, 24);
             this.cbDepartment.TabIndex = 2;
@@ -322,7 +318,7 @@
             // lblOfficeChoice
             // 
             this.lblOfficeChoice.AutoSize = true;
-            this.lblOfficeChoice.Location = new System.Drawing.Point(15, 18);
+            this.lblOfficeChoice.Location = new System.Drawing.Point(15, 15);
             this.lblOfficeChoice.Name = "lblOfficeChoice";
             this.lblOfficeChoice.Size = new System.Drawing.Size(56, 16);
             this.lblOfficeChoice.TabIndex = 21;
@@ -331,26 +327,73 @@
             // cbOffice
             // 
             this.cbOffice.FormattingEnabled = true;
-            this.cbOffice.Location = new System.Drawing.Point(77, 15);
+            this.cbOffice.Location = new System.Drawing.Point(77, 12);
             this.cbOffice.Name = "cbOffice";
             this.cbOffice.Size = new System.Drawing.Size(140, 24);
             this.cbOffice.TabIndex = 1;
             this.cbOffice.SelectedIndexChanged += new System.EventHandler(this.cbOffice_SelectedIndexChanged);
             // 
-            // Calender
+            // dateTimePickerHolidayStartDate
             // 
-            this.Calender.Location = new System.Drawing.Point(18, 168);
-            this.Calender.Name = "Calender";
-            this.Calender.TabIndex = 4;
+            this.dateTimePickerHolidayStartDate.Location = new System.Drawing.Point(332, 299);
+            this.dateTimePickerHolidayStartDate.Name = "dateTimePickerHolidayStartDate";
+            this.dateTimePickerHolidayStartDate.Size = new System.Drawing.Size(225, 22);
+            this.dateTimePickerHolidayStartDate.TabIndex = 30;
+            // 
+            // dateTimePickerHolidayEndDate
+            // 
+            this.dateTimePickerHolidayEndDate.Location = new System.Drawing.Point(332, 327);
+            this.dateTimePickerHolidayEndDate.Name = "dateTimePickerHolidayEndDate";
+            this.dateTimePickerHolidayEndDate.Size = new System.Drawing.Size(225, 22);
+            this.dateTimePickerHolidayEndDate.TabIndex = 31;
+            // 
+            // tbHolidayDescription
+            // 
+            this.tbHolidayDescription.Location = new System.Drawing.Point(332, 355);
+            this.tbHolidayDescription.Name = "tbHolidayDescription";
+            this.tbHolidayDescription.Size = new System.Drawing.Size(225, 22);
+            this.tbHolidayDescription.TabIndex = 32;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(243, 304);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 16);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Start datum:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(243, 332);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 16);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Eind datum:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(243, 358);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 16);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "Beschrijving:";
             // 
             // VakantiePlanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnGetAllHolidays);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbHolidayDescription);
+            this.Controls.Add(this.dateTimePickerHolidayEndDate);
+            this.Controls.Add(this.dateTimePickerHolidayStartDate);
             this.Controls.Add(this.dgvHolidays);
-            this.Controls.Add(this.btnNewHoliday);
+            this.Controls.Add(this.btnPlanNewHoliday);
             this.Controls.Add(this.lblEmployeeChoice);
             this.Controls.Add(this.cbEmployee);
             this.Controls.Add(this.lblDepartmentChoice);
@@ -360,7 +403,6 @@
             this.Controls.Add(this.groupBoxEmployee);
             this.Controls.Add(this.lblOfficeChoice);
             this.Controls.Add(this.cbOffice);
-            this.Controls.Add(this.Calender);
             this.Name = "VakantiePlanner";
             this.Text = "Vakantie Planner";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHolidays)).EndInit();
@@ -376,10 +418,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnGetAllHolidays;
         private System.Windows.Forms.DataGridView dgvHolidays;
-        private System.Windows.Forms.Button btnNewHoliday;
+        private System.Windows.Forms.Button btnPlanNewHoliday;
         private System.Windows.Forms.Label lblEmployeeChoice;
         private System.Windows.Forms.ComboBox cbEmployee;
         private System.Windows.Forms.Label lblDepartmentChoice;
@@ -404,9 +444,14 @@
         private System.Windows.Forms.TextBox tbEmployeeName;
         private System.Windows.Forms.Label lblOfficeChoice;
         private System.Windows.Forms.ComboBox cbOffice;
-        private System.Windows.Forms.MonthCalendar Calender;
         private System.Windows.Forms.ComboBox cbDepartmentOffice;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePickerHolidayStartDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerHolidayEndDate;
+        private System.Windows.Forms.TextBox tbHolidayDescription;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
 
