@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvHolidays = new System.Windows.Forms.DataGridView();
             this.btnPlanNewHoliday = new System.Windows.Forms.Button();
             this.lblEmployeeChoice = new System.Windows.Forms.Label();
             this.cbEmployee = new System.Windows.Forms.ComboBox();
@@ -62,27 +61,29 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHolidays)).BeginInit();
+            this.lbHolidayStartDate = new System.Windows.Forms.ListBox();
+            this.lbHolidayEndDate = new System.Windows.Forms.ListBox();
+            this.lbHolidayDescription = new System.Windows.Forms.ListBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnGetAllHolidays = new System.Windows.Forms.Button();
             this.groupBoxDepartment.SuspendLayout();
             this.groupBoxOffice.SuspendLayout();
             this.groupBoxEmployee.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgvHolidays
-            // 
-            this.dgvHolidays.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHolidays.Location = new System.Drawing.Point(223, 12);
-            this.dgvHolidays.Name = "dgvHolidays";
-            this.dgvHolidays.RowHeadersWidth = 51;
-            this.dgvHolidays.RowTemplate.Height = 24;
-            this.dgvHolidays.Size = new System.Drawing.Size(361, 261);
-            this.dgvHolidays.TabIndex = 17;
             // 
             // btnPlanNewHoliday
             // 
-            this.btnPlanNewHoliday.Location = new System.Drawing.Point(332, 383);
+            this.btnPlanNewHoliday.Location = new System.Drawing.Point(326, 21);
             this.btnPlanNewHoliday.Name = "btnPlanNewHoliday";
-            this.btnPlanNewHoliday.Size = new System.Drawing.Size(225, 51);
+            this.btnPlanNewHoliday.Size = new System.Drawing.Size(228, 82);
             this.btnPlanNewHoliday.TabIndex = 5;
             this.btnPlanNewHoliday.Text = "Plan uw vakantie in";
             this.btnPlanNewHoliday.UseVisualStyleBackColor = true;
@@ -91,7 +92,7 @@
             // lblEmployeeChoice
             // 
             this.lblEmployeeChoice.AutoSize = true;
-            this.lblEmployeeChoice.Location = new System.Drawing.Point(15, 75);
+            this.lblEmployeeChoice.Location = new System.Drawing.Point(6, 84);
             this.lblEmployeeChoice.Name = "lblEmployeeChoice";
             this.lblEmployeeChoice.Size = new System.Drawing.Size(85, 16);
             this.lblEmployeeChoice.TabIndex = 28;
@@ -100,7 +101,7 @@
             // cbEmployee
             // 
             this.cbEmployee.FormattingEnabled = true;
-            this.cbEmployee.Location = new System.Drawing.Point(106, 72);
+            this.cbEmployee.Location = new System.Drawing.Point(97, 81);
             this.cbEmployee.Name = "cbEmployee";
             this.cbEmployee.Size = new System.Drawing.Size(111, 24);
             this.cbEmployee.TabIndex = 3;
@@ -108,7 +109,7 @@
             // lblDepartmentChoice
             // 
             this.lblDepartmentChoice.AutoSize = true;
-            this.lblDepartmentChoice.Location = new System.Drawing.Point(15, 45);
+            this.lblDepartmentChoice.Location = new System.Drawing.Point(6, 54);
             this.lblDepartmentChoice.Name = "lblDepartmentChoice";
             this.lblDepartmentChoice.Size = new System.Drawing.Size(59, 16);
             this.lblDepartmentChoice.TabIndex = 26;
@@ -117,7 +118,7 @@
             // cbDepartment
             // 
             this.cbDepartment.FormattingEnabled = true;
-            this.cbDepartment.Location = new System.Drawing.Point(80, 42);
+            this.cbDepartment.Location = new System.Drawing.Point(71, 51);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(137, 24);
             this.cbDepartment.TabIndex = 2;
@@ -130,7 +131,7 @@
             this.groupBoxDepartment.Controls.Add(this.btnNewDepartment);
             this.groupBoxDepartment.Controls.Add(this.lblLocation);
             this.groupBoxDepartment.Controls.Add(this.tbDepartmentName);
-            this.groupBoxDepartment.Location = new System.Drawing.Point(590, 123);
+            this.groupBoxDepartment.Location = new System.Drawing.Point(590, 99);
             this.groupBoxDepartment.Name = "groupBoxDepartment";
             this.groupBoxDepartment.Size = new System.Drawing.Size(198, 111);
             this.groupBoxDepartment.TabIndex = 24;
@@ -230,7 +231,7 @@
             this.groupBoxEmployee.Controls.Add(this.label2);
             this.groupBoxEmployee.Controls.Add(this.lblEmployeeName);
             this.groupBoxEmployee.Controls.Add(this.tbEmployeeName);
-            this.groupBoxEmployee.Location = new System.Drawing.Point(590, 265);
+            this.groupBoxEmployee.Location = new System.Drawing.Point(590, 216);
             this.groupBoxEmployee.Name = "groupBoxEmployee";
             this.groupBoxEmployee.Size = new System.Drawing.Size(198, 169);
             this.groupBoxEmployee.TabIndex = 22;
@@ -318,7 +319,7 @@
             // lblOfficeChoice
             // 
             this.lblOfficeChoice.AutoSize = true;
-            this.lblOfficeChoice.Location = new System.Drawing.Point(15, 15);
+            this.lblOfficeChoice.Location = new System.Drawing.Point(6, 24);
             this.lblOfficeChoice.Name = "lblOfficeChoice";
             this.lblOfficeChoice.Size = new System.Drawing.Size(56, 16);
             this.lblOfficeChoice.TabIndex = 21;
@@ -327,7 +328,7 @@
             // cbOffice
             // 
             this.cbOffice.FormattingEnabled = true;
-            this.cbOffice.Location = new System.Drawing.Point(77, 12);
+            this.cbOffice.Location = new System.Drawing.Point(68, 21);
             this.cbOffice.Name = "cbOffice";
             this.cbOffice.Size = new System.Drawing.Size(140, 24);
             this.cbOffice.TabIndex = 1;
@@ -335,29 +336,29 @@
             // 
             // dateTimePickerHolidayStartDate
             // 
-            this.dateTimePickerHolidayStartDate.Location = new System.Drawing.Point(332, 299);
+            this.dateTimePickerHolidayStartDate.Location = new System.Drawing.Point(93, 21);
             this.dateTimePickerHolidayStartDate.Name = "dateTimePickerHolidayStartDate";
-            this.dateTimePickerHolidayStartDate.Size = new System.Drawing.Size(225, 22);
+            this.dateTimePickerHolidayStartDate.Size = new System.Drawing.Size(227, 22);
             this.dateTimePickerHolidayStartDate.TabIndex = 30;
             // 
             // dateTimePickerHolidayEndDate
             // 
-            this.dateTimePickerHolidayEndDate.Location = new System.Drawing.Point(332, 327);
+            this.dateTimePickerHolidayEndDate.Location = new System.Drawing.Point(93, 49);
             this.dateTimePickerHolidayEndDate.Name = "dateTimePickerHolidayEndDate";
-            this.dateTimePickerHolidayEndDate.Size = new System.Drawing.Size(225, 22);
+            this.dateTimePickerHolidayEndDate.Size = new System.Drawing.Size(227, 22);
             this.dateTimePickerHolidayEndDate.TabIndex = 31;
             // 
             // tbHolidayDescription
             // 
-            this.tbHolidayDescription.Location = new System.Drawing.Point(332, 355);
+            this.tbHolidayDescription.Location = new System.Drawing.Point(93, 77);
             this.tbHolidayDescription.Name = "tbHolidayDescription";
-            this.tbHolidayDescription.Size = new System.Drawing.Size(225, 22);
+            this.tbHolidayDescription.Size = new System.Drawing.Size(227, 22);
             this.tbHolidayDescription.TabIndex = 32;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(243, 304);
+            this.label6.Location = new System.Drawing.Point(4, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 16);
             this.label6.TabIndex = 33;
@@ -366,7 +367,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(243, 332);
+            this.label7.Location = new System.Drawing.Point(4, 54);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 16);
             this.label7.TabIndex = 34;
@@ -375,50 +376,155 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(243, 358);
+            this.label8.Location = new System.Drawing.Point(4, 80);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 16);
             this.label8.TabIndex = 35;
             this.label8.Text = "Beschrijving:";
             // 
+            // lbHolidayStartDate
+            // 
+            this.lbHolidayStartDate.FormattingEnabled = true;
+            this.lbHolidayStartDate.ItemHeight = 16;
+            this.lbHolidayStartDate.Location = new System.Drawing.Point(9, 37);
+            this.lbHolidayStartDate.Name = "lbHolidayStartDate";
+            this.lbHolidayStartDate.Size = new System.Drawing.Size(83, 212);
+            this.lbHolidayStartDate.TabIndex = 36;
+            this.lbHolidayStartDate.SelectedIndexChanged += new System.EventHandler(this.lbHolidayStartDate_SelectedIndexChanged);
+            // 
+            // lbHolidayEndDate
+            // 
+            this.lbHolidayEndDate.FormattingEnabled = true;
+            this.lbHolidayEndDate.ItemHeight = 16;
+            this.lbHolidayEndDate.Location = new System.Drawing.Point(98, 37);
+            this.lbHolidayEndDate.Name = "lbHolidayEndDate";
+            this.lbHolidayEndDate.Size = new System.Drawing.Size(83, 212);
+            this.lbHolidayEndDate.TabIndex = 37;
+            this.lbHolidayEndDate.SelectedIndexChanged += new System.EventHandler(this.lbHolidayEndDate_SelectedIndexChanged);
+            // 
+            // lbHolidayDescription
+            // 
+            this.lbHolidayDescription.FormattingEnabled = true;
+            this.lbHolidayDescription.ItemHeight = 16;
+            this.lbHolidayDescription.Location = new System.Drawing.Point(187, 37);
+            this.lbHolidayDescription.Name = "lbHolidayDescription";
+            this.lbHolidayDescription.Size = new System.Drawing.Size(133, 212);
+            this.lbHolidayDescription.TabIndex = 38;
+            this.lbHolidayDescription.SelectedIndexChanged += new System.EventHandler(this.lbHolidayDescription_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 16);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "Start datum";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(95, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 16);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Eind datum";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(184, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 16);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "Beschrijving";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbHolidayStartDate);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.lbHolidayEndDate);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.lbHolidayDescription);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Location = new System.Drawing.Point(246, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(326, 258);
+            this.groupBox1.TabIndex = 42;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Geplande vakanties";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblOfficeChoice);
+            this.groupBox2.Controls.Add(this.cbOffice);
+            this.groupBox2.Controls.Add(this.cbDepartment);
+            this.groupBox2.Controls.Add(this.lblDepartmentChoice);
+            this.groupBox2.Controls.Add(this.cbEmployee);
+            this.groupBox2.Controls.Add(this.lblEmployeeChoice);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(228, 117);
+            this.groupBox2.TabIndex = 43;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Selecteer medewerker";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnPlanNewHoliday);
+            this.groupBox3.Controls.Add(this.dateTimePickerHolidayStartDate);
+            this.groupBox3.Controls.Add(this.dateTimePickerHolidayEndDate);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.tbHolidayDescription);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Location = new System.Drawing.Point(12, 276);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(560, 109);
+            this.groupBox3.TabIndex = 44;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Plan uw vakantie";
+            // 
+            // btnGetAllHolidays
+            // 
+            this.btnGetAllHolidays.Location = new System.Drawing.Point(12, 132);
+            this.btnGetAllHolidays.Name = "btnGetAllHolidays";
+            this.btnGetAllHolidays.Size = new System.Drawing.Size(228, 138);
+            this.btnGetAllHolidays.TabIndex = 46;
+            this.btnGetAllHolidays.Text = "Haal vakanties op";
+            this.btnGetAllHolidays.UseVisualStyleBackColor = true;
+            // 
             // VakantiePlanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.tbHolidayDescription);
-            this.Controls.Add(this.dateTimePickerHolidayEndDate);
-            this.Controls.Add(this.dateTimePickerHolidayStartDate);
-            this.Controls.Add(this.dgvHolidays);
-            this.Controls.Add(this.btnPlanNewHoliday);
-            this.Controls.Add(this.lblEmployeeChoice);
-            this.Controls.Add(this.cbEmployee);
-            this.Controls.Add(this.lblDepartmentChoice);
-            this.Controls.Add(this.cbDepartment);
+            this.ClientSize = new System.Drawing.Size(800, 400);
+            this.Controls.Add(this.btnGetAllHolidays);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxDepartment);
             this.Controls.Add(this.groupBoxOffice);
             this.Controls.Add(this.groupBoxEmployee);
-            this.Controls.Add(this.lblOfficeChoice);
-            this.Controls.Add(this.cbOffice);
             this.Name = "VakantiePlanner";
             this.Text = "Vakantie Planner";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHolidays)).EndInit();
             this.groupBoxDepartment.ResumeLayout(false);
             this.groupBoxDepartment.PerformLayout();
             this.groupBoxOffice.ResumeLayout(false);
             this.groupBoxOffice.PerformLayout();
             this.groupBoxEmployee.ResumeLayout(false);
             this.groupBoxEmployee.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvHolidays;
         private System.Windows.Forms.Button btnPlanNewHoliday;
         private System.Windows.Forms.Label lblEmployeeChoice;
         private System.Windows.Forms.ComboBox cbEmployee;
@@ -452,6 +558,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ListBox lbHolidayStartDate;
+        private System.Windows.Forms.ListBox lbHolidayEndDate;
+        private System.Windows.Forms.ListBox lbHolidayDescription;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnGetAllHolidays;
     }
 }
 

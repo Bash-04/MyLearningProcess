@@ -64,9 +64,17 @@ namespace VakantiePlannerGUI
             }
         }
 
-        private void AddHolidaysToDGV()
+        private void AddHolidaysToListBox()
         {
-            dgvHolidays.DataSource = employee.GetHolidays()[selectedEmployee];
+            lbHolidayStartDate.Items.Clear();
+            lbHolidayEndDate.Items.Clear();
+            lbHolidayDescription.Items.Clear();
+            for (int i = 0; i < employee.GetHolidays().Count(); i++)
+            {
+                lbHolidayStartDate.Items.Add(employee.GetHolidays()[i].StartDate.ToString());
+                lbHolidayEndDate.Items.Add(employee.GetHolidays()[i].EndDate.ToString());
+                lbHolidayDescription.Items.Add(employee.GetHolidays()[i].Description);
+            }
         }
         #endregion
 
@@ -147,7 +155,7 @@ namespace VakantiePlannerGUI
             {
                 employee = department.GetAllEmployees()[selectedEmployee];
                 Console.WriteLine(employee.TryPlanHoliday(startDate, endDate, description));
-                AddHolidaysToDGV();
+                AddHolidaysToListBox();
                 ResetHolidayInputFields();
             }
             else
@@ -217,6 +225,26 @@ namespace VakantiePlannerGUI
         {
             selectedOffice = cbEmployeeOffice.SelectedIndex;
             selectedOffice = 0;
+        }
+        #endregion
+
+        #region ListBoxen
+        private void lbHolidayStartDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbHolidayEndDate.SelectedIndex = lbHolidayStartDate.SelectedIndex;
+            lbHolidayDescription.SelectedIndex = lbHolidayStartDate.SelectedIndex;
+        }
+
+        private void lbHolidayEndDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbHolidayStartDate.SelectedIndex = lbHolidayEndDate.SelectedIndex;
+            lbHolidayDescription.SelectedIndex = lbHolidayEndDate.SelectedIndex;
+        }
+
+        private void lbHolidayDescription_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbHolidayStartDate.SelectedIndex = lbHolidayDescription.SelectedIndex;
+            lbHolidayEndDate.SelectedIndex = lbHolidayDescription.SelectedIndex;
         }
         #endregion
     }
