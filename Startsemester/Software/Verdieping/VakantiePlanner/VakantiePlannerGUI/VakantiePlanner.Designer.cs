@@ -61,22 +61,22 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lbHolidayStartDate = new System.Windows.Forms.ListBox();
-            this.lbHolidayEndDate = new System.Windows.Forms.ListBox();
-            this.lbHolidayDescription = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnGetAllHolidays = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbHolidayDescription = new System.Windows.Forms.ListBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbHolidayEndDate = new System.Windows.Forms.ListBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lbHolidayStartDate = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBoxDepartment.SuspendLayout();
             this.groupBoxOffice.SuspendLayout();
             this.groupBoxEmployee.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPlanNewHoliday
@@ -382,78 +382,6 @@
             this.label8.TabIndex = 35;
             this.label8.Text = "Beschrijving:";
             // 
-            // lbHolidayStartDate
-            // 
-            this.lbHolidayStartDate.FormattingEnabled = true;
-            this.lbHolidayStartDate.ItemHeight = 16;
-            this.lbHolidayStartDate.Location = new System.Drawing.Point(9, 37);
-            this.lbHolidayStartDate.Name = "lbHolidayStartDate";
-            this.lbHolidayStartDate.Size = new System.Drawing.Size(83, 212);
-            this.lbHolidayStartDate.TabIndex = 36;
-            this.lbHolidayStartDate.SelectedIndexChanged += new System.EventHandler(this.lbHolidayStartDate_SelectedIndexChanged);
-            // 
-            // lbHolidayEndDate
-            // 
-            this.lbHolidayEndDate.FormattingEnabled = true;
-            this.lbHolidayEndDate.ItemHeight = 16;
-            this.lbHolidayEndDate.Location = new System.Drawing.Point(98, 37);
-            this.lbHolidayEndDate.Name = "lbHolidayEndDate";
-            this.lbHolidayEndDate.Size = new System.Drawing.Size(83, 212);
-            this.lbHolidayEndDate.TabIndex = 37;
-            this.lbHolidayEndDate.SelectedIndexChanged += new System.EventHandler(this.lbHolidayEndDate_SelectedIndexChanged);
-            // 
-            // lbHolidayDescription
-            // 
-            this.lbHolidayDescription.FormattingEnabled = true;
-            this.lbHolidayDescription.ItemHeight = 16;
-            this.lbHolidayDescription.Location = new System.Drawing.Point(187, 37);
-            this.lbHolidayDescription.Name = "lbHolidayDescription";
-            this.lbHolidayDescription.Size = new System.Drawing.Size(133, 212);
-            this.lbHolidayDescription.TabIndex = 38;
-            this.lbHolidayDescription.SelectedIndexChanged += new System.EventHandler(this.lbHolidayDescription_SelectedIndexChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 16);
-            this.label9.TabIndex = 39;
-            this.label9.Text = "Start datum";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(95, 18);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 16);
-            this.label10.TabIndex = 40;
-            this.label10.Text = "Eind datum";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(184, 18);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 16);
-            this.label11.TabIndex = 41;
-            this.label11.Text = "Beschrijving";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lbHolidayStartDate);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.lbHolidayEndDate);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.lbHolidayDescription);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(246, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(326, 258);
-            this.groupBox1.TabIndex = 42;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Geplande vakanties";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblOfficeChoice);
@@ -491,8 +419,80 @@
             this.btnGetAllHolidays.Name = "btnGetAllHolidays";
             this.btnGetAllHolidays.Size = new System.Drawing.Size(228, 138);
             this.btnGetAllHolidays.TabIndex = 46;
-            this.btnGetAllHolidays.Text = "Haal vakanties op";
+            this.btnGetAllHolidays.Text = "Toon vakantie overzicht";
             this.btnGetAllHolidays.UseVisualStyleBackColor = true;
+            this.btnGetAllHolidays.Click += new System.EventHandler(this.btnGetAllHolidays_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 16);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "Start datum";
+            // 
+            // lbHolidayDescription
+            // 
+            this.lbHolidayDescription.FormattingEnabled = true;
+            this.lbHolidayDescription.ItemHeight = 16;
+            this.lbHolidayDescription.Location = new System.Drawing.Point(187, 37);
+            this.lbHolidayDescription.Name = "lbHolidayDescription";
+            this.lbHolidayDescription.Size = new System.Drawing.Size(133, 212);
+            this.lbHolidayDescription.TabIndex = 38;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(95, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 16);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Eind datum";
+            // 
+            // lbHolidayEndDate
+            // 
+            this.lbHolidayEndDate.FormattingEnabled = true;
+            this.lbHolidayEndDate.ItemHeight = 16;
+            this.lbHolidayEndDate.Location = new System.Drawing.Point(98, 37);
+            this.lbHolidayEndDate.Name = "lbHolidayEndDate";
+            this.lbHolidayEndDate.Size = new System.Drawing.Size(83, 212);
+            this.lbHolidayEndDate.TabIndex = 37;
+            this.lbHolidayEndDate.SelectedIndexChanged += new System.EventHandler(this.lbHolidayEndDate_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(184, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 16);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "Beschrijving";
+            // 
+            // lbHolidayStartDate
+            // 
+            this.lbHolidayStartDate.FormattingEnabled = true;
+            this.lbHolidayStartDate.ItemHeight = 16;
+            this.lbHolidayStartDate.Location = new System.Drawing.Point(9, 37);
+            this.lbHolidayStartDate.Name = "lbHolidayStartDate";
+            this.lbHolidayStartDate.Size = new System.Drawing.Size(83, 212);
+            this.lbHolidayStartDate.TabIndex = 36;
+            this.lbHolidayStartDate.SelectedIndexChanged += new System.EventHandler(this.lbHolidayStartDate_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbHolidayStartDate);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.lbHolidayEndDate);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.lbHolidayDescription);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Location = new System.Drawing.Point(246, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(326, 258);
+            this.groupBox1.TabIndex = 42;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Geplande vakanties";
             // 
             // VakantiePlanner
             // 
@@ -514,12 +514,12 @@
             this.groupBoxOffice.PerformLayout();
             this.groupBoxEmployee.ResumeLayout(false);
             this.groupBoxEmployee.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -558,16 +558,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ListBox lbHolidayStartDate;
-        private System.Windows.Forms.ListBox lbHolidayEndDate;
-        private System.Windows.Forms.ListBox lbHolidayDescription;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnGetAllHolidays;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ListBox lbHolidayDescription;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ListBox lbHolidayEndDate;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ListBox lbHolidayStartDate;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

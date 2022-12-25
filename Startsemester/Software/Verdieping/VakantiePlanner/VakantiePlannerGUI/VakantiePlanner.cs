@@ -247,5 +247,12 @@ namespace VakantiePlannerGUI
             lbHolidayEndDate.SelectedIndex = lbHolidayDescription.SelectedIndex;
         }
         #endregion
+
+
+        private void btnGetAllHolidays_Click(object sender, EventArgs e)
+        {
+            VakantieOverzicht vakantieOverzicht = new VakantieOverzicht();
+            vakantieOverzicht.Show();
+        }
     }
 }

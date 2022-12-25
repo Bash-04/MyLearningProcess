@@ -12,3 +12,4 @@ C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProc
 C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerGUI\obj\Debug\VakantiePlannerGUI.csproj.CopyComplete
 C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerGUI\obj\Debug\VakantiePlannerGUI.exe
 C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerGUI\obj\Debug\VakantiePlannerGUI.pdb
+C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerGUI\obj\Debug\VakantiePlannerGUI.VakantieOverzicht.resources
