@@ -24,12 +24,27 @@ namespace VakantiePlannerModules
             Email = email;
         }
 
+        public Employee(string name, string email, int vacationDays)
+        {
+            Holidays = new List<Holiday>();
+            Name = name;
+            Email = email;
+            VacationDays = vacationDays;
+        }
+
         public Employee() { }
 
         //Methods
-        public int GetVacationDays()
+        public int AddVacationDays(int vacationDays)
         {
-            throw new System.NotImplementedException();
+            VacationDays += vacationDays;
+            return VacationDays;
+        }
+
+        public int DeleteVacationDays(int vacationDays)
+        {
+            VacationDays -= vacationDays;
+            return VacationDays;
         }
 
         public List<Holiday> GetHolidays()
@@ -53,7 +68,7 @@ namespace VakantiePlannerModules
         private bool HolidayMayBeAdded(Holiday newHoliday)
         {
             bool holidayMayBeAdded = true;
-            if (Holidays.Count != null)
+            if (Holidays.Count != 0)
             {
                 foreach (var holiday in Holidays)
                 {

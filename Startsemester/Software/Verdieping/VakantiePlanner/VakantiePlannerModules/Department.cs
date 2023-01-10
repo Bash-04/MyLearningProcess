@@ -59,7 +59,7 @@ namespace VakantiePlannerModules
 
         public string GetName()
         {
-            throw new System.NotImplementedException();
+            return Name;
         }
 
         public int GetNrOfEmployees()

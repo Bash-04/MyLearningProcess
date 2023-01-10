@@ -18,7 +18,6 @@ namespace VakantiePlannerGUI
         Office office = new Office();
         Department department = new Department();
         Employee employee = new Employee();
-        Holiday holiday = new Holiday();
 
         int selectedOffice = -1;
         int selectedDepartment = -1;
@@ -69,11 +68,15 @@ namespace VakantiePlannerGUI
             lbHolidayStartDate.Items.Clear();
             lbHolidayEndDate.Items.Clear();
             lbHolidayDescription.Items.Clear();
-            for (int i = 0; i < employee.GetHolidays().Count(); i++)
+            employee = company.GetAllOffices()[cbOffice.SelectedIndex].GetAllDepartments()[cbDepartment.SelectedIndex].GetAllEmployees()[cbEmployee.SelectedIndex];
+            if (employee.GetHolidays() != null)
             {
-                lbHolidayStartDate.Items.Add(employee.GetHolidays()[i].StartDate.ToString());
-                lbHolidayEndDate.Items.Add(employee.GetHolidays()[i].EndDate.ToString());
-                lbHolidayDescription.Items.Add(employee.GetHolidays()[i].Description);
+                for (int i = 0; i < employee.GetHolidays().Count(); i++)
+                {
+                    lbHolidayStartDate.Items.Add(employee.GetHolidays()[i].StartDate.ToString());
+                    lbHolidayEndDate.Items.Add(employee.GetHolidays()[i].EndDate.ToString());
+                    lbHolidayDescription.Items.Add(employee.GetHolidays()[i].Description);
+                }
             }
         }
         #endregion
@@ -160,7 +163,7 @@ namespace VakantiePlannerGUI
             }
             else
             {
-                MessageBox.Show("selecteer eerst een kantoor en een department");
+                MessageBox.Show("selecteer eerst een kantoor, een department en een werknemer");
             }
         }
 
@@ -195,6 +198,11 @@ namespace VakantiePlannerGUI
         #endregion
 
         #region ComboBoxen
+        private void cbEmployee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddHolidaysToListBox();
+        }
+
         private void cbOffice_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedOffice = cbOffice.SelectedIndex;

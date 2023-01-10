@@ -105,6 +105,7 @@
             this.cbEmployee.Name = "cbEmployee";
             this.cbEmployee.Size = new System.Drawing.Size(111, 24);
             this.cbEmployee.TabIndex = 3;
+            this.cbEmployee.SelectedIndexChanged += new System.EventHandler(this.cbEmployee_SelectedIndexChanged);
             // 
             // lblDepartmentChoice
             // 
@@ -131,7 +132,7 @@
             this.groupBoxDepartment.Controls.Add(this.btnNewDepartment);
             this.groupBoxDepartment.Controls.Add(this.lblLocation);
             this.groupBoxDepartment.Controls.Add(this.tbDepartmentName);
-            this.groupBoxDepartment.Location = new System.Drawing.Point(590, 99);
+            this.groupBoxDepartment.Location = new System.Drawing.Point(1104, 99);
             this.groupBoxDepartment.Name = "groupBoxDepartment";
             this.groupBoxDepartment.Size = new System.Drawing.Size(198, 111);
             this.groupBoxDepartment.TabIndex = 24;
@@ -194,7 +195,7 @@
             this.groupBoxOffice.Controls.Add(this.btnNewOffice);
             this.groupBoxOffice.Controls.Add(this.tbOfficeLocation);
             this.groupBoxOffice.Controls.Add(this.label4);
-            this.groupBoxOffice.Location = new System.Drawing.Point(590, 12);
+            this.groupBoxOffice.Location = new System.Drawing.Point(1104, 12);
             this.groupBoxOffice.Name = "groupBoxOffice";
             this.groupBoxOffice.Size = new System.Drawing.Size(198, 81);
             this.groupBoxOffice.TabIndex = 23;
@@ -231,7 +232,7 @@
             this.groupBoxEmployee.Controls.Add(this.label2);
             this.groupBoxEmployee.Controls.Add(this.lblEmployeeName);
             this.groupBoxEmployee.Controls.Add(this.tbEmployeeName);
-            this.groupBoxEmployee.Location = new System.Drawing.Point(590, 216);
+            this.groupBoxEmployee.Location = new System.Drawing.Point(1104, 216);
             this.groupBoxEmployee.Name = "groupBoxEmployee";
             this.groupBoxEmployee.Size = new System.Drawing.Size(198, 169);
             this.groupBoxEmployee.TabIndex = 22;
@@ -406,7 +407,7 @@
             this.groupBox3.Controls.Add(this.tbHolidayDescription);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(12, 276);
+            this.groupBox3.Location = new System.Drawing.Point(12, 407);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(560, 109);
             this.groupBox3.TabIndex = 44;
@@ -415,9 +416,9 @@
             // 
             // btnGetAllHolidays
             // 
-            this.btnGetAllHolidays.Location = new System.Drawing.Point(12, 132);
+            this.btnGetAllHolidays.Location = new System.Drawing.Point(522, 325);
             this.btnGetAllHolidays.Name = "btnGetAllHolidays";
-            this.btnGetAllHolidays.Size = new System.Drawing.Size(228, 138);
+            this.btnGetAllHolidays.Size = new System.Drawing.Size(326, 52);
             this.btnGetAllHolidays.TabIndex = 46;
             this.btnGetAllHolidays.Text = "Toon vakantie overzicht";
             this.btnGetAllHolidays.UseVisualStyleBackColor = true;
@@ -487,7 +488,7 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.lbHolidayDescription);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(246, 12);
+            this.groupBox1.Location = new System.Drawing.Point(522, 61);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(326, 258);
             this.groupBox1.TabIndex = 42;
@@ -498,7 +499,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 400);
+            this.ClientSize = new System.Drawing.Size(1314, 528);
             this.Controls.Add(this.btnGetAllHolidays);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
