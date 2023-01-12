@@ -18,7 +18,7 @@ namespace VakantiePlannerModules
         public Department(string departmentName)
         {
             Employees = new List<Employee>();
-            Employee employee = new Employee("Alle", "alle@gvgn.nl");
+            Employee employee = new Employee("Alle");
             Employees.Add(employee);
             Name = departmentName;
         }
