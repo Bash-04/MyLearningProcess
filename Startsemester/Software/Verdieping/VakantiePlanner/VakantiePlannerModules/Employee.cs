@@ -17,6 +17,13 @@ namespace VakantiePlannerModules
         public int VacationDays { get; private set; }
 
         //Constructors
+        public Employee(string name)
+        {
+            Holidays = new List<Holiday>();
+            Name = name;
+            VacationDays = 0;
+        }
+
         public Employee(string name, string email)
         {
             Holidays = new List<Holiday>();
