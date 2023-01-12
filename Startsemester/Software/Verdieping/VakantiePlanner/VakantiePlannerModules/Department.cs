@@ -9,7 +9,7 @@ namespace VakantiePlannerModules
     public class Department
     {
         //Properties
-        public List<Employee> Employees { get; private set; }
+        private List<Employee> Employees { get; set; }
         public List<Holiday> Holidays { get; private set; }
 
         public string Name { get; private set; }
@@ -81,7 +81,7 @@ namespace VakantiePlannerModules
             return NrOfEmployees;
         }
 
-        public List<Holiday> GetAllHolidaysPerEmployee()
+        public List<Holiday> GetAllHolidaysFromEmployees()
         {
             return Holidays;
         }

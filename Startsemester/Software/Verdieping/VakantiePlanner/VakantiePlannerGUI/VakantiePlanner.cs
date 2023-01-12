@@ -71,7 +71,7 @@ namespace VakantiePlannerGUI
             employee = company.GetAllOffices()[cbOffice.SelectedIndex].GetAllDepartments()[cbDepartment.SelectedIndex].GetAllEmployees()[cbEmployee.SelectedIndex];
             if (employee.Name == "Alle")
             {
-                foreach (var employee in department.Employees)
+                foreach (var employee in department.GetAllEmployees())
                 {
                     if (employee.GetHolidays() != null)
                     {
