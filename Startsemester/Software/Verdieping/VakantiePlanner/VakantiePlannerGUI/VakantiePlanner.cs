@@ -63,20 +63,35 @@ namespace VakantiePlannerGUI
             }
         }
 
-        private void AddHolidaysToListBox()
+        private void GetAllHolidaysAndAddHolidaysToListBox()
         {
             lbHolidayStartDate.Items.Clear();
             lbHolidayEndDate.Items.Clear();
             lbHolidayDescription.Items.Clear();
             employee = company.GetAllOffices()[cbOffice.SelectedIndex].GetAllDepartments()[cbDepartment.SelectedIndex].GetAllEmployees()[cbEmployee.SelectedIndex];
+            if (employee.Name == "Alle")
+            {
+                foreach (var employee in department.Employees)
+                {
+                    if (employee.GetHolidays() != null)
+                    {
+                        AddHolidaysToListBox();
+                    }
+                }
+            }
             if (employee.GetHolidays() != null)
             {
-                for (int i = 0; i < employee.GetHolidays().Count(); i++)
-                {
-                    lbHolidayStartDate.Items.Add(employee.GetHolidays()[i].StartDate.ToString());
-                    lbHolidayEndDate.Items.Add(employee.GetHolidays()[i].EndDate.ToString());
-                    lbHolidayDescription.Items.Add(employee.GetHolidays()[i].Description);
-                }
+                AddHolidaysToListBox();
+            }
+        }
+
+        private void AddHolidaysToListBox()
+        {
+            for (int i = 0; i < employee.GetHolidays().Count(); i++)
+            {
+                lbHolidayStartDate.Items.Add(employee.GetHolidays()[i].StartDate.ToString());
+                lbHolidayEndDate.Items.Add(employee.GetHolidays()[i].EndDate.ToString());
+                lbHolidayDescription.Items.Add(employee.GetHolidays()[i].Description);
             }
         }
         #endregion
@@ -158,7 +173,7 @@ namespace VakantiePlannerGUI
             {
                 employee = department.GetAllEmployees()[selectedEmployee];
                 Console.WriteLine(employee.TryPlanHoliday(startDate, endDate, description));
-                AddHolidaysToListBox();
+                GetAllHolidaysAndAddHolidaysToListBox();
                 ResetHolidayInputFields();
             }
             else
@@ -189,6 +204,7 @@ namespace VakantiePlannerGUI
         private void btnNewEmployee_Click(object sender, EventArgs e)
         {
             NewEmployee();
+            Console.WriteLine($"{office.Location} has {office.GetNrOfEmployees()} employees");
         }
 
         private void btnPlanNewHoliday_Click(object sender, EventArgs e)
@@ -200,7 +216,7 @@ namespace VakantiePlannerGUI
         #region ComboBoxen
         private void cbEmployee_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AddHolidaysToListBox();
+            GetAllHolidaysAndAddHolidaysToListBox();
         }
 
         private void cbOffice_SelectedIndexChanged(object sender, EventArgs e)
@@ -257,9 +273,9 @@ namespace VakantiePlannerGUI
         #endregion
 
 
-        private void btnGetAllHolidays_Click(object sender, EventArgs e)
+        private void btnOpenHolidayOverview_Click(object sender, EventArgs e)
         {
-            VakantieOverzicht vakantieOverzicht = new VakantieOverzicht();
+            VakantieOverzicht vakantieOverzicht = new VakantieOverzicht(company);
             vakantieOverzicht.Show();
         }
     }

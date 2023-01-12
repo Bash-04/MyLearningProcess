@@ -58,9 +58,14 @@ namespace VakantiePlannerModules
 
         public int GetNrOfEmployees()
         {
-            int nrOfEmployees = 0;
+            int NrOfEmployees = 0;
 
-            return nrOfEmployees;
+            foreach (var department in Departments)
+            {
+                NrOfEmployees += department.GetNrOfEmployees();
+            }
+
+            return NrOfEmployees;
         }
     }
 }

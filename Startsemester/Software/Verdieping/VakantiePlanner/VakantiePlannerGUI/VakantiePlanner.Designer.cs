@@ -63,7 +63,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnGetAllHolidays = new System.Windows.Forms.Button();
+            this.btnOpenHolidayOverview = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.lbHolidayDescription = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -414,15 +414,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Plan uw vakantie";
             // 
-            // btnGetAllHolidays
+            // btnOpenHolidayOverview
             // 
-            this.btnGetAllHolidays.Location = new System.Drawing.Point(522, 325);
-            this.btnGetAllHolidays.Name = "btnGetAllHolidays";
-            this.btnGetAllHolidays.Size = new System.Drawing.Size(326, 52);
-            this.btnGetAllHolidays.TabIndex = 46;
-            this.btnGetAllHolidays.Text = "Toon vakantie overzicht";
-            this.btnGetAllHolidays.UseVisualStyleBackColor = true;
-            this.btnGetAllHolidays.Click += new System.EventHandler(this.btnGetAllHolidays_Click);
+            this.btnOpenHolidayOverview.Location = new System.Drawing.Point(522, 325);
+            this.btnOpenHolidayOverview.Name = "btnOpenHolidayOverview";
+            this.btnOpenHolidayOverview.Size = new System.Drawing.Size(326, 52);
+            this.btnOpenHolidayOverview.TabIndex = 46;
+            this.btnOpenHolidayOverview.Text = "Toon vakantie overzicht van geselecteerde afdeling";
+            this.btnOpenHolidayOverview.UseVisualStyleBackColor = true;
+            this.btnOpenHolidayOverview.Click += new System.EventHandler(this.btnOpenHolidayOverview_Click);
             // 
             // label9
             // 
@@ -500,7 +500,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1314, 528);
-            this.Controls.Add(this.btnGetAllHolidays);
+            this.Controls.Add(this.btnOpenHolidayOverview);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -561,7 +561,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnGetAllHolidays;
+        private System.Windows.Forms.Button btnOpenHolidayOverview;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ListBox lbHolidayDescription;
         private System.Windows.Forms.Label label10;

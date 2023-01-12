@@ -22,6 +22,7 @@ namespace VakantiePlannerModules
             Holidays = new List<Holiday>();
             Name = name;
             Email = email;
+            VacationDays = 0;
         }
 
         public Employee(string name, string email, int vacationDays)

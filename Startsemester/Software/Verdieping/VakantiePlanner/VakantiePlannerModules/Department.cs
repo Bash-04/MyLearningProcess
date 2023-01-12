@@ -44,6 +44,19 @@ namespace VakantiePlannerModules
             return employeeMayBeAdded;
         }
 
+        public string TryAddEmployee(string name, string email, int vacationDays)
+        {
+            string employeeMayBeAdded = "Employee may not be added";
+            Employee employee = new Employee(name, email, vacationDays);
+            if (EmployeeMayBeAdded(employee))
+            {
+                Employees.Add(employee);
+                employeeMayBeAdded = "Employee has been added";
+            }
+
+            return employeeMayBeAdded;
+        }
+
         private bool EmployeeMayBeAdded(Employee newEmployee)
         {
             bool employeeMayBeAdded = true;
@@ -57,14 +70,14 @@ namespace VakantiePlannerModules
             return employeeMayBeAdded;
         }
 
-        public string GetName()
-        {
-            return Name;
-        }
-
         public int GetNrOfEmployees()
         {
-            throw new System.NotImplementedException();
+            int NrOfEmployees = -1;
+            foreach (var employee in Employees)
+            {
+                NrOfEmployees++;
+            }
+            return NrOfEmployees;
         }
     }
 }

@@ -10,14 +10,14 @@
   <Class Name="VakantiePlannerModules.Department">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAEABAAAAAAAAAAAAEQACAAAAAAAEAAAAAAABAA=</HashCode>
+      <HashCode>QAAAAAEABAAAAAAAAAAAAEQACAAAAAAAEAAAAAAAAAA=</HashCode>
       <FileName>Department.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="VakantiePlannerModules.Employee">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAABiAAAAAAAAAAAAZAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <HashCode>AAAgAAAABiAAAAAAAAAAAAZAAAAAAAAAABAACAAAAAA=</HashCode>
       <FileName>Employee.cs</FileName>
     </TypeIdentifier>
   </Class>
