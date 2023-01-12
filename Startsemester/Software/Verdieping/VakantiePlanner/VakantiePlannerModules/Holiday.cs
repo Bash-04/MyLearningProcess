@@ -27,7 +27,8 @@ namespace VakantiePlannerModules
 
         public Holiday() { }
 
-        public TimeSpan GetDuration(DateTime startDate, DateTime endDate)
+        // Methods
+        private TimeSpan GetDuration(DateTime startDate, DateTime endDate)
         {
             TimeSpan Duration = endDate - startDate;
             return Duration;

@@ -19,6 +19,7 @@ namespace VakantiePlannerModules
         {
             Employees = new List<Employee>();
             Employee employee = new Employee("Alle");
+            Holidays = new List<Holiday>();
             Employees.Add(employee);
             Name = departmentName;
         }
@@ -78,6 +79,11 @@ namespace VakantiePlannerModules
                 NrOfEmployees++;
             }
             return NrOfEmployees;
+        }
+
+        public List<Holiday> GetAllHolidaysPerEmployee()
+        {
+            return Holidays;
         }
     }
 }
