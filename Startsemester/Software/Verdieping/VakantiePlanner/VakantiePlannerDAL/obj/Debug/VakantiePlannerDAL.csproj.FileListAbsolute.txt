@@ -1,9 +1,0 @@
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerDAL\bin\Debug\VakantiePlannerDAL.dll
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerDAL\bin\Debug\VakantiePlannerDAL.pdb
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerDAL\bin\Debug\VakantiePlannerModules.dll
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerDAL\bin\Debug\VakantiePlannerModules.pdb
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerDAL\obj\Debug\VakantiePlannerDAL.csproj.AssemblyReference.cache
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerDAL\obj\Debug\VakantiePlannerDAL.csproj.CoreCompileInputs.cache
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerDAL\obj\Debug\VakantiePlannerDAL.csproj.CopyComplete
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerDAL\obj\Debug\VakantiePlannerDAL.dll
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\MyLearningProcess\Startsemester\Software\Verdieping\VakantiePlanner\VakantiePlannerDAL\obj\Debug\VakantiePlannerDAL.pdb

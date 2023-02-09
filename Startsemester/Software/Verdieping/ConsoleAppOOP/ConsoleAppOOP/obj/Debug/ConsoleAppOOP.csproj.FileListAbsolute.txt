@@ -1,8 +1,0 @@
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\ConsoleAppOOP\ConsoleAppOOP\obj\Debug\ConsoleAppOOP.csproj.AssemblyReference.cache
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\ConsoleAppOOP\ConsoleAppOOP\obj\Debug\ConsoleAppOOP.csproj.SuggestedBindingRedirects.cache
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\ConsoleAppOOP\ConsoleAppOOP\obj\Debug\ConsoleAppOOP.csproj.CoreCompileInputs.cache
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\ConsoleAppOOP\ConsoleAppOOP\bin\Debug\ConsoleAppOOP.exe.config
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\ConsoleAppOOP\ConsoleAppOOP\bin\Debug\ConsoleAppOOP.exe
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\ConsoleAppOOP\ConsoleAppOOP\bin\Debug\ConsoleAppOOP.pdb
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\ConsoleAppOOP\ConsoleAppOOP\obj\Debug\ConsoleAppOOP.exe
-C:\Users\BasBa\OneDrive\Standaard\Programming and Design\Projects\ConsoleAppOOP\ConsoleAppOOP\obj\Debug\ConsoleAppOOP.pdb
