@@ -8,7 +8,7 @@ namespace CircusTrainLibrary
     public class Wagon
     {
         private List<Animal> Animals;
-        private int WagonSize = 0;
+        private int Capacity = 10;
 
         public Wagon()
         {
@@ -39,13 +39,18 @@ namespace CircusTrainLibrary
         {
             foreach (var animal in Animals)
             {
-                WagonSize += (int)animal.Size;
+                Capacity -= (int)animal.Size;
+                if (Capacity < 0)
+                {
+                    Capacity += (int)animal.Size;
+                    return true;
+                }
                 if (animal.Type == Type.Carnivor && animal.Size == Size.large)
                 {
                     return true;
                 }
             }
-            if (WagonSize >= 10)
+            if (Capacity == 0)
             {
                 return true;
             }
