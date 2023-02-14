@@ -6,17 +6,23 @@ Console.WriteLine("Hello World!");
 
 CircusTrain circusTrain = new CircusTrain();
 
+
 string input = Console.ReadLine();
 int.TryParse(input, out int AmountOfAnimals);
+
 Stopwatch stopwatchAnimalCreation = new Stopwatch();
 stopwatchAnimalCreation.Start();
 circusTrain.CreateRandomAmountOfAnimals(AmountOfAnimals);
 stopwatchAnimalCreation.Stop();
 
+Console.WriteLine(circusTrain.AllAnimalsInTrain());
+
 Stopwatch stopwatchAnimalSorting = new Stopwatch();
 stopwatchAnimalSorting.Start();
 Console.WriteLine(circusTrain.PutEveryAnimalInAWagon());
 stopwatchAnimalSorting.Stop();
+
+Console.WriteLine(circusTrain.RemoveEmptyWagons());
 
 int i = 1;
 foreach (var wagon in circusTrain.Wagons)

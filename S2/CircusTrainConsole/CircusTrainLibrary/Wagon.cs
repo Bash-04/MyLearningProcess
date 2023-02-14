@@ -68,67 +68,67 @@ namespace CircusTrainLibrary
 
         private bool AnimalMayBeAdded(Animal animal)
         {
-            if (animal.Type == Type.Carnivor && animal.Size == Size.large && Animals.Count() != 0)
+            if (animal.Type == Type.Carnivore && animal.Size == Size.large && Animals.Count() != 0)
             {
                 return false;
             }
-            else if (animal.Type == Type.Carnivor && animal.Size == Size.medium)
+            else if (animal.Type == Type.Carnivore && animal.Size == Size.medium)
             {
                 foreach (var _animal in Animals)
                 {
-                    if (_animal.Type == Type.Carnivor)
+                    if (_animal.Type == Type.Carnivore)
                     {
                         return false;
                     }
-                    else if (_animal.Type == Type.Herbivor && _animal.Size == Size.medium || _animal.Size == Size.small)
+                    else if (_animal.Type == Type.Herbivore && _animal.Size == Size.medium || _animal.Size == Size.small)
                     {
                         return false;
                     }
                 }
                 return true;
             }
-            else if (animal.Type == Type.Carnivor && animal.Size == Size.small)
+            else if (animal.Type == Type.Carnivore && animal.Size == Size.small)
             {
                 foreach (var _animal in Animals)
                 {
-                    if (_animal.Type == Type.Carnivor)
+                    if (_animal.Type == Type.Carnivore)
                     {
                         return false;
                     }
-                    else if (_animal.Type == Type.Herbivor && _animal.Size == Size.small)
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            else if (animal.Type == Type.Herbivor && animal.Size == Size.large)
-            {
-                foreach (var _animal in Animals)
-                {
-                    if (_animal.Type == Type.Carnivor && _animal.Size == Size.large)
+                    else if (_animal.Type == Type.Herbivore && _animal.Size == Size.small)
                     {
                         return false;
                     }
                 }
                 return true;
             }
-            else if (animal.Type == Type.Herbivor && animal.Size == Size.medium)
+            else if (animal.Type == Type.Herbivore && animal.Size == Size.large)
             {
                 foreach (var _animal in Animals)
                 {
-                    if (_animal.Type == Type.Carnivor && _animal.Size == Size.large || _animal.Type == Type.Carnivor && _animal.Size == Size.medium)
+                    if (_animal.Type == Type.Carnivore && _animal.Size == Size.large)
                     {
                         return false;
                     }
                 }
                 return true;
             }
-            else if (animal.Type == Type.Herbivor && animal.Size == Size.small)
+            else if (animal.Type == Type.Herbivore && animal.Size == Size.medium)
             {
                 foreach (var _animal in Animals)
                 {
-                    if (_animal.Type == Type.Carnivor)
+                    if (_animal.Type == Type.Carnivore && _animal.Size == Size.large || _animal.Type == Type.Carnivore && _animal.Size == Size.medium)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            else if (animal.Type == Type.Herbivore && animal.Size == Size.small)
+            {
+                foreach (var _animal in Animals)
+                {
+                    if (_animal.Type == Type.Carnivore)
                     {
                         return false;
                     }

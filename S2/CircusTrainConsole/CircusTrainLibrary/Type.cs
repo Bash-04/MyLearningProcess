@@ -7,7 +7,7 @@ namespace CircusTrainLibrary
 {
     public enum Type
     {
-        Carnivor,
-        Herbivor
+        Carnivore,
+        Herbivore
     }
 }
