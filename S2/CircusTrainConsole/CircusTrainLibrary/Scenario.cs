@@ -1,156 +1,60 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CircusTrainLibrary
 {
-    public class CircusTrain
+    public class Scenario
     {
-        public List<Wagon> Wagons;
-        public List<Animal> Animals;
-        Random random = new Random();
-        
-        public CircusTrain()
+        public string Name { get; private set; }
+        public Action Selected { get; private set; }
+        public List<Animal> Animals { get; private set; }
+
+        public Scenario() { }
+
+        public Scenario(string name, Action selected)
         {
-            Wagons = new List<Wagon>();
+            Name = name;
+            Selected = selected;
             Animals = new List<Animal>();
         }
 
-        public string PutEveryAnimalInAWagon()
+        public void LoadChosenScenario()
         {
-            #region commented for loop (same as foreach)
-            //for (int i = 0; i < OrderAnimalsOnTypeAndSize().Count(); i++)
-            //{
-            //    Animal animal = OrderAnimalsOnTypeAndSize().ElementAt(i);
-            //    // eerst alle carnivoren aan wagons toevoegen. voor iedere carnivoor maak een nieuwe wagon aan.
-            //    int FirstNotFullWagon = 0;
-            //    if (animal.Type == Type.Carnivore)
-            //    {
-            //        Wagon w = new Wagon();
-            //        Wagons.Add(w);
-            //        w.TryAddAnimalToWagon(animal);
-            //        if (animal.Size == Size.large)
-            //        {
-            //            FirstNotFullWagon++;
-            //        }
-            //    }
-            //    // voor iedere herbivoor check iedere wagon of de herbivoor toegevoegd mag worden. zo niet maak een nieuwe wagon. 
-            //    if (animal.Type == Type.Herbivore)
-            //    {
-            //        bool animalHasBeenAdded = false;
-            //        for (int j = FirstNotFullWagon; j < Wagons.Count; j++)
-            //        {
-            //            animalHasBeenAdded = false;
-            //            if (Wagons[j].TryAddAnimalToWagon(animal))
-            //            {
-            //                animalHasBeenAdded = true;
-            //            }
-            //        }
-            //        //foreach (var wagon in Wagons)
-            //        //{
-            //        //    if(wagon.Capacity != 0)
-            //        //    {
-            //        //        animalHasBeenAdded = false;
-            //        //        if (wagon.TryAddAnimalToWagon(animal))
-            //        //        {
-            //        //            animalHasBeenAdded = true;
-            //        //        }
-            //        //    }
-            //        //}
-            //        if (!animalHasBeenAdded)
-            //        {
-            //            Wagon w = new Wagon();
-            //            Wagons.Add(w);
-            //            w.TryAddAnimalToWagon(animal);
-            //        }
-            //    }
-            //}
-            #endregion
-
-            foreach (var animal in OrderAnimalsOnTypeAndSize())
+            Console.Clear();
+            switch (Name)
             {
-                // eerst alle carnivoren aan wagons toevoegen. voor iedere carnivoor maak een nieuwe wagon aan.
-                if (animal.Type == Type.Carnivore)
-                {
-                    Wagon w = new Wagon();
-                    Wagons.Add(w);
-                    w.TryAddAnimalToWagon(animal);
-                }
-                // voor iedere herbivoor check iedere wagon of de herbivoor toegevoegd mag worden. zo niet maak een nieuwe wagon. 
-                if (animal.Type == Type.Herbivore)
-                {
-                    bool animalHasBeenAdded = false;
-                    foreach (var wagon in Wagons)
-                    {
-                        if (wagon.capacityLeft != 0)
-                        {
-                            animalHasBeenAdded = false;
-                            if (wagon.TryAddAnimalToWagon(animal))
-                            {
-                                animalHasBeenAdded = true;
-                            }
-                        }
-                    }
-                    if (!animalHasBeenAdded)
-                    {
-                        Wagon w = new Wagon();
-                        Wagons.Add(w);
-                        w.TryAddAnimalToWagon(animal);
-                    }
-                }
+                case "Scenario 1":
+                    ScenarioOne();
+                    break;
+                case "Scenario 2":
+                    ScenarioTwo();
+                    break;
+                case "Scenario 3":
+                    ScenarioThree();
+                    break;
+                case "Scenario 4":
+                    ScenarioFour();
+                    break;
+                case "Scenario 5":
+                    ScenarioFive();
+                    break;
+                case "Scenario 6":
+                    ScenarioSix();
+                    break;
+                case "Scenario 7":
+                    ScenarioSeven();
+                    break;
+                case "Choose your own amount of animals":
+                    Console.ReadLine();
+                    break;
             }
-
-            RemoveEmptyWagons();
-
-            return "All animals have been added to a wagon";
         }
 
-        public StringBuilder AllAnimalsInTrain()
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-            foreach (var animal in OrderAnimalsOnTypeAndSize())
-            {
-                stringBuilder.AppendLine($"{animal.Size} {animal.Type}");
-            }
-
-            return stringBuilder;
-        }
-
-        public string RemoveEmptyWagons()
-        {
-            int count = 0;
-            string AmountOfWagonsRemoved = $"{ count } wagons have been removed";
-
-            for (int i = 0; i < Wagons.Count; i++)
-            {
-                if (Wagons[i].capacityLeft == 10)
-                {
-                    Wagons.RemoveAt(i);
-                    count++;
-                }
-            }
-
-            return AmountOfWagonsRemoved = $"{count} wagons have been removed";
-        }
-
-        public StringBuilder ShowWagons()
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-
-            for (int i = 0; i < Wagons.Count(); i++)
-            {
-                stringBuilder.AppendLine($"Wagon {i + 1}");
-                for (int j = 0; j < Wagons[i].Animals.Count(); j++)
-                {
-                    stringBuilder.AppendLine($"{Wagons[i].Animals[j].Size} {Wagons[i].Animals[j].Type}");
-                }
-                stringBuilder.AppendLine("");
-            }
-
-            return stringBuilder;
-        }
-
-        public void ScenarioOne()
+        private void ScenarioOne()
         {
             TryCreateNewAnimal(Size.small, Type.Carnivore);
             TryCreateNewAnimal(Size.large, Type.Herbivore);
@@ -160,7 +64,7 @@ namespace CircusTrainLibrary
             TryCreateNewAnimal(Size.medium, Type.Herbivore);
         }
 
-        public void ScenarioTwo()
+        private void ScenarioTwo()
         {
             TryCreateNewAnimal(Size.small, Type.Carnivore);
             TryCreateNewAnimal(Size.large, Type.Herbivore);
@@ -173,7 +77,7 @@ namespace CircusTrainLibrary
             TryCreateNewAnimal(Size.small, Type.Herbivore);
         }
 
-        public void ScenarioThree()
+        private void ScenarioThree()
         {
             TryCreateNewAnimal(Size.large, Type.Carnivore);
             TryCreateNewAnimal(Size.medium, Type.Carnivore);
@@ -183,7 +87,7 @@ namespace CircusTrainLibrary
             TryCreateNewAnimal(Size.small, Type.Herbivore);
         }
 
-        public void ScenarioFour()
+        private void ScenarioFour()
         {
             TryCreateNewAnimal(Size.large, Type.Carnivore);
             TryCreateNewAnimal(Size.medium, Type.Carnivore);
@@ -198,7 +102,7 @@ namespace CircusTrainLibrary
             TryCreateNewAnimal(Size.small, Type.Herbivore);
         }
 
-        public void ScenarioFive()
+        private void ScenarioFive()
         {
             TryCreateNewAnimal(Size.small, Type.Carnivore);
             TryCreateNewAnimal(Size.large, Type.Herbivore);
@@ -207,7 +111,7 @@ namespace CircusTrainLibrary
             TryCreateNewAnimal(Size.small, Type.Herbivore);
         }
 
-        public void ScenarioSix()
+        private void ScenarioSix()
         {
             TryCreateNewAnimal(Size.small, Type.Carnivore);
             TryCreateNewAnimal(Size.small, Type.Carnivore);
@@ -219,7 +123,7 @@ namespace CircusTrainLibrary
             TryCreateNewAnimal(Size.medium, Type.Herbivore);
         }
 
-        public void ScenarioSeven()
+        private void ScenarioSeven()
         {
             TryCreateNewAnimal(Size.large, Type.Carnivore);
             TryCreateNewAnimal(Size.large, Type.Carnivore);
@@ -245,14 +149,11 @@ namespace CircusTrainLibrary
             TryCreateNewAnimal(Size.medium, Type.Herbivore);
             TryCreateNewAnimal(Size.medium, Type.Herbivore);
             TryCreateNewAnimal(Size.medium, Type.Herbivore);
-        }
-
-        public void ScenarioEight()
-        {
         }
 
         public int CreateRandomAmountOfAnimals(int AmountOfAnimals)
         {
+            Random random = new Random();
             for (int i = 0; i < AmountOfAnimals; i++)
             {
                 var sizeVar = Size.small;
@@ -308,14 +209,6 @@ namespace CircusTrainLibrary
                 return false;
             }
             return true;
-        }
-
-        private IEnumerable<Animal> OrderAnimalsOnTypeAndSize()
-        {
-            var orderedAnimalsOnSize = Animals.OrderByDescending(x => x.Size);
-            var orderedAnimalsOnSizeAndOnType = orderedAnimalsOnSize.OrderBy(x => x.Type);
-
-            return orderedAnimalsOnSizeAndOnType;
         }
     }
 }

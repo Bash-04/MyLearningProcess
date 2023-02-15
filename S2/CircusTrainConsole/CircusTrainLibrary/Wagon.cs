@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,8 @@ namespace CircusTrainLibrary
     public class Wagon
     {
         public List<Animal> Animals;
-        public int Capacity { get; private set; }
+        private int Capacity { get; set; }
+        public int capacityLeft { get; set; }
 
         public Wagon()
         {
@@ -18,22 +20,15 @@ namespace CircusTrainLibrary
 
         public bool TryAddAnimalToWagon(Animal animal)
         {
-            if (!WagonIsFull() && !AnimalIsToLarge(animal))
+            if (AnimalIsNotToLarge(animal))
             {
                 if (AnimalMayBeAdded(animal))
                 {
                     Animals.Add(animal);
                     return true; // "Animal has succesfully been added to a wagon";
                 }
-                else
-                {
-                    return false; // "Animal may not be added to the wagon";
-                }
             }
-            else
-            {
-                return false; //"Wagon is full";
-            }
+            return false;
         }
 
         private bool WagonIsFull()
@@ -55,85 +50,105 @@ namespace CircusTrainLibrary
             return false;
         }
 
-        private bool AnimalIsToLarge(Animal animal)
+        private bool AnimalIsNotToLarge(Animal animal)
         {
-            Capacity -= (int)animal.Size;
-            if (Capacity < 0)
+            capacityLeft = Capacity;
+            foreach (var _animal in Animals)
             {
-                Capacity += (int)animal.Size;
-                return true;
+                capacityLeft -= (int)_animal.Size;
             }
-            return false;
+            return capacityLeft >= (int)animal.Size;
         }
 
         private bool AnimalMayBeAdded(Animal animal)
         {
-            if (animal.Type == Type.Carnivore && animal.Size == Size.large && Animals.Count() != 0)
+            switch (animal.Type)
             {
-                return false;
-            }
-            else if (animal.Type == Type.Carnivore && animal.Size == Size.medium)
-            {
-                foreach (var _animal in Animals)
-                {
-                    if (_animal.Type == Type.Carnivore)
+                case Type.Carnivore:
+                    switch (animal.Size)
                     {
-                        return false;
+                        case Size.large:
+                            {
+                                if (Animals.Count() != 0)
+                                {
+                                    return false;
+                                }
+                                return true;
+                            }
+
+                        case Size.medium:
+                            {
+                                foreach (var _animal in Animals)
+                                {
+                                    if (_animal.Type == Type.Carnivore)
+                                    {
+                                        return false;
+                                    }
+                                    else if (_animal.Type == Type.Herbivore && _animal.Size == Size.medium || _animal.Size == Size.small)
+                                    {
+                                        return false;
+                                    }
+                                }
+                                return true;
+                            }
+
+                        case Size.small:
+                        {
+                            foreach (var _animal in Animals)
+                            {
+                                if (_animal.Type == Type.Carnivore)
+                                {
+                                    return false;
+                                }
+                                else if (_animal.Type == Type.Herbivore && _animal.Size == Size.small)
+                                {
+                                    return false;
+                                }
+                            }
+                            return true;
+                        }
                     }
-                    else if (_animal.Type == Type.Herbivore && _animal.Size == Size.medium || _animal.Size == Size.small)
+                    break;
+
+                case Type.Herbivore:
+                    switch (animal.Size)
                     {
-                        return false;
+                        case Size.large:
+                            {
+                                foreach (var _animal in Animals)
+                                {
+                                    if (_animal.Type == Type.Carnivore && _animal.Size == Size.large)
+                                    {
+                                        return false;
+                                    }
+                                }
+                                return true;
+                            }
+                        case Size.medium:
+                            {
+                                foreach (var _animal in Animals)
+                                {
+                                    if (_animal.Type == Type.Carnivore && _animal.Size == Size.large || _animal.Type == Type.Carnivore && _animal.Size == Size.medium)
+                                    {
+                                        return false;
+                                    }
+                                }
+                                return true;
+                            }
+                            
+                        case Size.small:
+                            {
+                                foreach (var _animal in Animals)
+                                {
+                                    if (_animal.Type == Type.Carnivore)
+                                    {
+                                        return false;
+                                    }
+                                }
+                                return true;
+                            }
                     }
-                }
-                return true;
-            }
-            else if (animal.Type == Type.Carnivore && animal.Size == Size.small)
-            {
-                foreach (var _animal in Animals)
-                {
-                    if (_animal.Type == Type.Carnivore)
-                    {
-                        return false;
-                    }
-                    else if (_animal.Type == Type.Herbivore && _animal.Size == Size.small)
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            else if (animal.Type == Type.Herbivore && animal.Size == Size.large)
-            {
-                foreach (var _animal in Animals)
-                {
-                    if (_animal.Type == Type.Carnivore && _animal.Size == Size.large)
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            else if (animal.Type == Type.Herbivore && animal.Size == Size.medium)
-            {
-                foreach (var _animal in Animals)
-                {
-                    if (_animal.Type == Type.Carnivore && _animal.Size == Size.large || _animal.Type == Type.Carnivore && _animal.Size == Size.medium)
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            else if (animal.Type == Type.Herbivore && animal.Size == Size.small)
-            {
-                foreach (var _animal in Animals)
-                {
-                    if (_animal.Type == Type.Carnivore)
-                    {
-                        return false;
-                    }
-                }
-                return true;
+                    break;
             }
             return true;
         }

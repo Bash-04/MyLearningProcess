@@ -5,13 +5,14 @@ using System.Diagnostics;
 Console.WriteLine("Hello World!");
 
 CircusTrain circusTrain = new CircusTrain();
-
+//Scenario scenario = new Scenario();
 
 string input = Console.ReadLine();
 int.TryParse(input, out int AmountOfAnimals);
 
 Stopwatch stopwatchAnimalCreation = new Stopwatch();
 stopwatchAnimalCreation.Start();
+//circusTrain.ScenarioOne();
 circusTrain.CreateRandomAmountOfAnimals(AmountOfAnimals);
 stopwatchAnimalCreation.Stop();
 
@@ -22,19 +23,7 @@ stopwatchAnimalSorting.Start();
 Console.WriteLine(circusTrain.PutEveryAnimalInAWagon());
 stopwatchAnimalSorting.Stop();
 
-Console.WriteLine(circusTrain.RemoveEmptyWagons());
-
-int i = 1;
-foreach (var wagon in circusTrain.Wagons)
-{
-    Console.WriteLine($"Wagon {i}");
-    foreach (var animal in wagon.Animals)
-    {
-        Console.WriteLine($"{animal.Size} {animal.Type}");
-    }
-    i++;
-    Console.WriteLine();
-}
+Console.WriteLine(circusTrain.ShowWagons());
 
 Console.WriteLine($"Elapsed time creating animals: {stopwatchAnimalCreation.ElapsedMilliseconds}");
 Console.WriteLine($"Elapsed time sorting animals: {stopwatchAnimalSorting.ElapsedMilliseconds}");
