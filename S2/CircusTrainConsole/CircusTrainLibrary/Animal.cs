@@ -16,9 +16,45 @@ namespace CircusTrainLibrary
             Type = type;
         }
 
-        public bool TryEatOtherAnimal()
+        public bool TryEatOtherAnimal(Size praySize)
         {
-            return false;
+            bool result = false;
+            switch (Type)
+            {
+                case Type.Carnivore:
+                    switch (Size)
+                    {
+                        case Size.large:
+                            {
+                                result = true;
+                                break;
+                            }
+
+                        case Size.medium:
+                            {
+                                if (praySize == Size.medium || praySize == Size.small)
+                                {
+                                    result = true;
+                                }
+                                break;
+                            }
+
+                        case Size.small:
+                            {
+                                if (praySize == Size.small)
+                                {
+                                    result = true;
+                                }
+                                break;
+                            }
+                    }
+                    break;
+
+                case Type.Herbivore:
+                    result = false;
+                    break;
+            }
+            return result;
         }
     }
 }

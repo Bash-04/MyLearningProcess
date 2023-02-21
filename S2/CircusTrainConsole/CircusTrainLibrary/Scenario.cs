@@ -56,99 +56,99 @@ namespace CircusTrainLibrary
 
         private void ScenarioOne()
         {
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
         }
 
         private void ScenarioTwo()
         {
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.small, Type.Herbivore);
-            TryCreateNewAnimal(Size.small, Type.Herbivore);
-            TryCreateNewAnimal(Size.small, Type.Herbivore);
-            TryCreateNewAnimal(Size.small, Type.Herbivore);
-            TryCreateNewAnimal(Size.small, Type.Herbivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.small, Type.Herbivore);
+            CreateNewAnimal(Size.small, Type.Herbivore);
+            CreateNewAnimal(Size.small, Type.Herbivore);
+            CreateNewAnimal(Size.small, Type.Herbivore);
+            CreateNewAnimal(Size.small, Type.Herbivore);
         }
 
         private void ScenarioThree()
         {
-            TryCreateNewAnimal(Size.large, Type.Carnivore);
-            TryCreateNewAnimal(Size.medium, Type.Carnivore);
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.small, Type.Herbivore);
+            CreateNewAnimal(Size.large, Type.Carnivore);
+            CreateNewAnimal(Size.medium, Type.Carnivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.small, Type.Herbivore);
         }
 
         private void ScenarioFour()
         {
-            TryCreateNewAnimal(Size.large, Type.Carnivore);
-            TryCreateNewAnimal(Size.medium, Type.Carnivore);
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.small, Type.Herbivore);
+            CreateNewAnimal(Size.large, Type.Carnivore);
+            CreateNewAnimal(Size.medium, Type.Carnivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.small, Type.Herbivore);
         }
 
         private void ScenarioFive()
         {
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.small, Type.Herbivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.small, Type.Herbivore);
         }
 
         private void ScenarioSix()
         {
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
         }
 
         private void ScenarioSeven()
         {
-            TryCreateNewAnimal(Size.large, Type.Carnivore);
-            TryCreateNewAnimal(Size.large, Type.Carnivore);
-            TryCreateNewAnimal(Size.large, Type.Carnivore);
-            TryCreateNewAnimal(Size.medium, Type.Carnivore);
-            TryCreateNewAnimal(Size.medium, Type.Carnivore);
-            TryCreateNewAnimal(Size.medium, Type.Carnivore);
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.small, Type.Carnivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.large, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
-            TryCreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.large, Type.Carnivore);
+            CreateNewAnimal(Size.large, Type.Carnivore);
+            CreateNewAnimal(Size.large, Type.Carnivore);
+            CreateNewAnimal(Size.medium, Type.Carnivore);
+            CreateNewAnimal(Size.medium, Type.Carnivore);
+            CreateNewAnimal(Size.medium, Type.Carnivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.small, Type.Carnivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.large, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
+            CreateNewAnimal(Size.medium, Type.Herbivore);
         }
 
         public int CreateRandomAmountOfAnimals(int AmountOfAnimals)
@@ -182,12 +182,12 @@ namespace CircusTrainLibrary
                 {
                     typeVar = Type.Herbivore;
                 }
-                TryCreateNewAnimal(sizeVar, typeVar);
+                CreateNewAnimal(sizeVar, typeVar);
             }
             return AmountOfAnimals;
         }
 
-        private string TryCreateNewAnimal(Size size, Type type)
+        private string CreateNewAnimal(Size size, Type type)
         {
             Animal animal;
             if (AnimalMayBeCreated(size, type))

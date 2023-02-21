@@ -1,8 +1,8 @@
 ﻿using CircusTrainLibrary;
 using System.Diagnostics;
 
-// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello World!");
+//// See https://aka.ms/new-console-template for more information
+//Console.WriteLine("Hello World!");
 
 CircusTrain circusTrain = new CircusTrain();
 //Scenario scenario = new Scenario();
