@@ -7,6 +7,8 @@ using System.Diagnostics;
 CircusTrain circusTrain = new CircusTrain();
 //Scenario scenario = new Scenario();
 
+Console.WriteLine("Please fill in the amount of animals to be sorted: ");
+
 string input = Console.ReadLine();
 int.TryParse(input, out int AmountOfAnimals);
 
