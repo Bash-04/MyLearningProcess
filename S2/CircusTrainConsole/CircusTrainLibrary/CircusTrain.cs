@@ -27,40 +27,38 @@ namespace CircusTrainLibrary
 
         private void PutAllCarnivorsInWagon()
         {
-            foreach (var animal in OrderAnimalsOnTypeAndSize())
+            var Carnivores = GetCarnivores();
+            foreach (var animal in Carnivores)
             {
                 // eerst alle carnivoren aan wagons toevoegen. voor iedere carnivoor maak een nieuwe wagon aan.
-                if (animal.Type == Type.Carnivore)
-                {
-                    Wagon w = new Wagon();
-                    Wagons.Add(w);
-                    w.TryAddAnimalToWagon(animal);
-                }
+                Wagon w = new Wagon();
+                Wagons.Add(w);
+                w.TryAddAnimalToWagon(animal);
             }
         }
 
         private void PutAllHerbivoresInWagon()
         {
-            foreach (var animal in OrderAnimalsOnTypeAndSize()) 
+            var Herbivores = GetHerbivores();
+
+            foreach (var animal in Herbivores) 
             { 
                 // voor iedere herbivoor check iedere wagon of de herbivoor toegevoegd mag worden. zo niet maak een nieuwe wagon. 
-                if (animal.Type == Type.Herbivore)
+                bool animalHasBeenAdded = false;
+                foreach (var wagon in Wagons)
                 {
-                    bool animalHasBeenAdded = false;
-                    foreach (var wagon in Wagons)
+                    animalHasBeenAdded = false;
+                    if (wagon.TryAddAnimalToWagon(animal))
                     {
-                        animalHasBeenAdded = false;
-                        if (wagon.TryAddAnimalToWagon(animal))
-                        {
-                            animalHasBeenAdded = true;
-                        }
+                        animalHasBeenAdded = true;
+                        break;
                     }
-                    if (!animalHasBeenAdded)
-                    {
-                        Wagon w = new Wagon();
-                        Wagons.Add(w);
-                        w.TryAddAnimalToWagon(animal);
-                    }
+                }
+                if (!animalHasBeenAdded)
+                {
+                    Wagon w = new Wagon();
+                    Wagons.Add(w);
+                    w.TryAddAnimalToWagon(animal);
                 }
             }
         }
@@ -91,107 +89,6 @@ namespace CircusTrainLibrary
             }
 
             return stringBuilder;
-        }
-
-        public void ScenarioOne()
-        {
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-        }
-
-        public void ScenarioTwo()
-        {
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.small, Type.Herbivore);
-            CreateNewAnimal(Size.small, Type.Herbivore);
-            CreateNewAnimal(Size.small, Type.Herbivore);
-            CreateNewAnimal(Size.small, Type.Herbivore);
-            CreateNewAnimal(Size.small, Type.Herbivore);
-        }
-
-        public void ScenarioThree()
-        {
-            CreateNewAnimal(Size.large, Type.Carnivore);
-            CreateNewAnimal(Size.medium, Type.Carnivore);
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.small, Type.Herbivore);
-        }
-
-        public void ScenarioFour()
-        {
-            CreateNewAnimal(Size.large, Type.Carnivore);
-            CreateNewAnimal(Size.medium, Type.Carnivore);
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.small, Type.Herbivore);
-        }
-
-        public void ScenarioFive()
-        {
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.small, Type.Herbivore);
-        }
-
-        public void ScenarioSix()
-        {
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-        }
-
-        public void ScenarioSeven()
-        {
-            CreateNewAnimal(Size.large, Type.Carnivore);
-            CreateNewAnimal(Size.large, Type.Carnivore);
-            CreateNewAnimal(Size.large, Type.Carnivore);
-            CreateNewAnimal(Size.medium, Type.Carnivore);
-            CreateNewAnimal(Size.medium, Type.Carnivore);
-            CreateNewAnimal(Size.medium, Type.Carnivore);
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.small, Type.Carnivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.large, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-            CreateNewAnimal(Size.medium, Type.Herbivore);
-        }
-
-        public void ScenarioEight()
-        {
         }
 
         public int CreateRandomAmountOfAnimals(int AmountOfAnimals)
@@ -226,10 +123,10 @@ namespace CircusTrainLibrary
                 }
                 CreateNewAnimal(sizeVar, typeVar);
             }
-            return AmountOfAnimals;
+            return Animals.Count();
         }
 
-        private bool CreateNewAnimal(Size size, Type type)
+        public bool CreateNewAnimal(Size size, Type type)
         {
             Animal animal;
             animal = new Animal(size, type);
@@ -244,6 +141,58 @@ namespace CircusTrainLibrary
             var orderedAnimalsOnSizeAndOnType = orderedAnimalsOnSize.OrderBy(x => x.Type);
 
             return orderedAnimalsOnSizeAndOnType;
+        }
+
+        private IEnumerable<Animal> GetCarnivores()
+        {
+            List<Animal> carnivores = new List<Animal>();
+            foreach (var animal in Animals)
+            {
+                if (animal.Type == Type.Carnivore)
+                {
+                    carnivores.Add(animal);
+                }
+            }
+
+            var orderedAnimalsOnSizeAndCarnivore = carnivores.OrderByDescending(x => x.Size);
+
+            return orderedAnimalsOnSizeAndCarnivore;
+        }
+
+        private IEnumerable<Animal> GetHerbivores()
+        {
+            List<Animal> herbivores = new List<Animal>();
+            foreach (var animal in Animals)
+            {
+                if (animal.Type == Type.Herbivore)
+                {
+                    herbivores.Add(animal);
+                }
+            }
+
+            int mediumAnimals = 0;
+            int largeAnimals = 0;
+
+            foreach (var animal in Animals)
+            {
+                if (animal.Size == Size.medium)
+                {
+                    mediumAnimals++;
+                }
+                else if (animal.Size == Size.large)
+                {
+                    largeAnimals++;
+                }
+            }
+
+            if (largeAnimals > mediumAnimals)
+            {
+                return herbivores.OrderByDescending(x => x.Size);
+            }
+            else
+            {
+                return herbivores.OrderBy(x => x.Size);
+            }
         }
     }
 }
