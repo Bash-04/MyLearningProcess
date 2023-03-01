@@ -13,8 +13,6 @@ namespace CircusTrainUnitTest
         { 
             // Arrange
             circusTrain = new CircusTrain();
-
-            //scenario = new Scenario();
         }
 
         [TestMethod]
